@@ -1,0 +1,55 @@
+# Site settings
+title: Jazztips
+name: Jazztips
+email: urban@sprintworks.se
+description: Tips om bra musik
+# baseurl: ""
+url: "https://jazztips.se"
+
+logo: images/favicon.png
+timezone: Europe/Stockholm
+locale: sv_SE
+author:
+  facebook: urbansanden
+  twitter: urre
+facebook:
+  app_id: 184004771618651
+  publisher: 191053684242292
+  admins: 564494638
+twitter:
+  username: jazztps
+
+# Pagination
+paginate: 18
+paginate_path: "/:num/"
+
+# Build
+buildtype: develop
+# limit_posts: 10
+
+# Exclude in build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - bin
+  - node_modules
+  - index.js
+
+# Asssets
+# Assets using Jekyll Asset Pipeline
+assets:
+ debug: false
+ sources:
+   - assets
+
+# Tag page
+tag_page_layout: tag_page
+tag_page_dir: taggar
+tag_permalink_style: pretty
+
+# Gems
+gems:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-seo-tag

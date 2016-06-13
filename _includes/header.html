@@ -1,0 +1,35 @@
+<div class="container py4">
+	<div class="columns">
+		<div class="column xs-col-12 col-md-4">
+			<h1 class="mt0">
+				<a class="" href="{{ site.baseurl }}/">Jazztips</a>
+			</h1>
+		</div>
+		<div class="column xs-col-12 col-md-4">
+		</div>
+		<div class="column xs-col-12 col-md-4">
+			{% if page.layout == 'post' %}
+				<div class="btn-group btn-group-block">
+				{% for tags in page.tags limit:4 %}
+					<a class="btn" href="{{site.baseurl}}/taggar/{{ tags }}">{{ tags }}</a>
+				{% endfor %}
+				</div>
+			{% endif %}
+			{% if page.url contains "taggar" %}
+				<div class="text-right">
+					<p>Skivor med tagg: {{ page.tag }}</p>
+				</div>
+			{% endif %}
+			<div class="text-center">
+				<div class="btn-group btn-group-block">
+					{% if paginator.previous_page %}
+					<a class="btn" href="{{ paginator.previous_page_path }}">Tidigare</a>
+					{% endif %}
+					{% if paginator.next_page %}
+					<a class="btn" href="{{ paginator.next_page_path }}">Nästa</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

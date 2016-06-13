@@ -1,0 +1,22 @@
+.loading {
+	background: url('../images/ph.png') center center no-repeat;
+	background-size: cover;
+}
+
+img {
+	width: 100%;
+	opacity: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;   
+	-webkit-transition: opacity 500ms ease-in-out 100ms;
+	-moz-transition: opacity 500ms ease-in-out 100ms;
+	-o-transition: opacity 500ms ease-in-out 100ms;
+	transition: opacity 500ms ease-in-out 100ms;
+	max-height: 500px;
+}
+
+img.b-loaded {
+	opacity:1;
+	width:auto;
+}
