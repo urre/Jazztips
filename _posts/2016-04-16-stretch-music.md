@@ -2,7 +2,7 @@
 layout: post
 title: Stretch Music
 artist: Christian Scott
-label: 
+label: Ropeadope Records
 year: 2015
 tags: electronica scott trumpet
 image: https://res.cloudinary.com/urre/image/upload/v1465689706/avg0grbcjlwi77daok4p.jpg

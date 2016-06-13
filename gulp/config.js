@@ -47,8 +47,10 @@ module.exports = {
       images: './_site/assets/images/',
       assets: './_site/assets/',
     },
-    consid: {
-      svn: '/Users/urbansanden/projects/hemmafonster-consid/Hemmafonster-HTML/trunk'
+    cloudflare: {
+      token: 'd9d2e4bc2a576d710333c0cbd8552f3d672b6',
+      email: 'hej@urre.me',
+      domain: 'jazztips.se',
     }
   }
 };
