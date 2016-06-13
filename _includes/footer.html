@@ -5,13 +5,10 @@
 				{% unless page.layout == 'post' %}
 					<p><a class="btn btn-link" href="https://twitter.com/urre">Av Urban Sandén</a></p>
 				{% else %}
-					<p>{{ site.posts | size }} skivtips sedan 2010</p>
+					<p>{{ site.posts | size }} <a href="{{ site.baseurl }}/archive/">skivtips sedan 2010</a></p>
 				{% endunless %}
 			</div>
-			<div class="column xs-col-12 col-md-4">
-			<a class="btn btn-link" href="{{ site.baseurl }}/archive/">Arkiv</a>
-			</div>
-			<div class="column xs-col-12 col-md-4">
+			<div class="column xs-col-12 col-md-4" style="margin-left: auto;">
 			{% if page.layout == 'post' %}
 				<div class="text-right">
 					<p><a class="btn btn-link" href="https://urre.me">Av Urban Sandén</a></p>
