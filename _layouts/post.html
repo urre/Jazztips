@@ -18,11 +18,11 @@ layout: default
 		<h1 class="mt0">{{page.artist}} - {{page.title}}</h1>
 		{{ content }}
 
-		<p class="mt0">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a></p>
+		<p class="mt4">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a></p>
 		
 		<p class="mt2">
 	
-		{% for musician in page.credits.musicians %}
+		{% for musician in page.credits.musicians.musician %}
 		  {{ musician.instrument | capitalize }} - <a href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a><br>
 		{% endfor %}
 

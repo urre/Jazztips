@@ -5,6 +5,7 @@
 ### Features
 
 + Jekyll 3
++ Fast
 + Tags
 + RSS Feed
 + Hosted on Amazon S3 (Frankfurt datacenter)
@@ -13,7 +14,7 @@
 + Using blazy for lazy loading images
 + Images hosted on Cloudinary CDN
 + Musicans using nested YAML
-
++ HTTPS everywhere
 
 ## Setup
 
