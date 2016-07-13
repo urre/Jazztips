@@ -6,7 +6,7 @@ description: Tips om bra musik
 # baseurl: ""
 url: "https://jazztips.se"
 
-logo: images/favicon.png
+logo: /images/favicon.png
 timezone: Europe/Stockholm
 locale: sv_SE
 author:

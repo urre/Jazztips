@@ -9,7 +9,7 @@ image: https://res.cloudinary.com/urre/image/upload/v1465689706/avg0grbcjlwi77da
 cloudinarypublicid: avg0grbcjlwi77daok4p
 cloudinaryversion: 1465689706
 permalink: /stretch-music/
-spotify: http://christianscott.tv/stretch-music-the-app/
+spotify: https://open.spotify.com/album/20UVzhnAjVL5ksYI6jhoS9
 spotify_album: https://open.spotify.com/album/20UVzhnAjVL5ksYI6jhoS9
 credits:
     musicians:
