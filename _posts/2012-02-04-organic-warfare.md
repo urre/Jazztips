@@ -14,7 +14,7 @@ spotify_album:
 credits:
     musicians:
         musician:
-             - { name: 'Jasper Hoiby', instrument: '' }
+             - { name: 'Jasper Hoiby', instrument: 'Bas' }
              - { name: 'Magnus Hjorth', instrument: 'Trummor' }
              - { name: 'Anton Eger', instrument: 'Piano' }
 ---
