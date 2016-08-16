@@ -21,10 +21,18 @@ layout: default
 		<p class="mt4">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a></p>
 		
 		<p class="mt2">
-	
-		{% for musician in page.credits.musicians.musician %}
-		  {{ musician.instrument | capitalize }} - <a href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a><br>
-		{% endfor %}
+		
+		{% if page.credits.musicians %}
+			{% for musician in page.credits.musicians.musician %}
+			  {{ musician.instrument | capitalize }} - <a href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a><br>
+			{% endfor %}
+		{% endif %}
+
+		{% if page.credits %}
+			{% for peoples in page.credits %}
+			  {{ peoples.instrument | capitalize }} - <a href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }} </a><br>
+			{% endfor %}
+		{% endif %}
 
 		</p>
 
