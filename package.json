@@ -4,9 +4,18 @@
   "description": "Good music",
   "main": "",
   "dependencies": {
+    "async": "^2.0.1",
+    "chalk": "^1.1.3",
+    "clear": "0.0.1",
     "cloudflare-purge": "^1.0.7",
+    "cloudinary": "^1.4.1",
+    "dotenv": "^2.0.0",
+    "fs": "0.0.2",
     "gulp-cloudflare": "^0.1.3",
-    "spectre.css": "^0.1.24"
+    "prompt-improved": "^0.1.10",
+    "slug": "^0.9.1",
+    "spectre.css": "^0.1.24",
+    "x-ray": "^2.3.0"
   },
   "devDependencies": {
     "browser-sync": "*",
@@ -29,11 +38,11 @@
     "require-dir": "*"
   },
   "scripts": {
-    "scrape": "node index.js",
     "start": "bundle exec jekyll serve",
+    "newpost": "node index.js",
     "serve": "gulp serve",
     "clean": "rm -rf _site",
-    "purge": "node purge",
+    "purge": "./purge.sh",
     "deploy": "gulp prod && aws s3 sync _site/ s3://jazztips.se --delete --region eu-central-1 && npm run purge",
     "bundleclean": "rm Gemfile.lock && bundle clean --force && bundle install",
     "spectre": "cp bower_components/spectre.css/dist/spectre.min.css _assets/scss/"
