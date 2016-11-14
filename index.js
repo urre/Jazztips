@@ -100,9 +100,14 @@ async.series([
 		for (var i = 0, l = album.credits.length; i < l; i++) { 
 
 			var artist = album.credits[i].musician.trim().replace('\n', '');
-			var credit = album.credits[i].credit.trim().replace('\n', '');
+			var credit = album.credits[i].credit.trim()
+			.replace('Drums', 'Trummor')
+			.replace('Bass', 'Bas')
+			.replace('Electric', 'El')
+			.replace('Saxophone', 'Saxofon')
+			.replace('Guitar', 'Gitarr')
 
-				if (!credit.match(/producer|packaging|photo|art|liner|mastering|mixing|a&r|assistant|remixing|director|engineer|marketing|readings|graphic|management|design|reissue/gi)) {
+				if (!credit.match(/producer|packaging|photo|art|liner|mastering|mixing|a&r|assistant|remixing|director|engineer|lettering|marketing|readings|graphic|management|design|reissue/gi)) {
 					credits.push({'musician': artist, 'instrument': credit.replace('Main Personnel', '').replace(',', '').replace(' ', ', ').trim()});  
 				}
 		}
