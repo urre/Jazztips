@@ -1,3 +1,4 @@
+
 <div class="container py4">
 	<div class="columns">
 		<div class="column xs-col-12 col-md-4">
@@ -7,7 +8,7 @@
 		</div>
 		<div class="column xs-col-12 col-md-4">
 		</div>
-		<div class="column xs-col-12 col-md-4">
+		<div class="column xs-col-12 col-md-2">
 			{% if page.layout == 'post' %}
 				<div class="btn-group btn-group-block">
 				{% for tags in page.tags limit:4 %}
@@ -29,6 +30,15 @@
 					<a class="btn" href="{{ paginator.next_page_path }}">Nästa</a>
 					{% endif %}
 				</div>
+			</div>
+		</div>
+		<div class="column xs-col-12 col-md-2">
+			<div class="btn-group btn-group-block">
+				{% if page.url contains "sok" %}
+					<a class="btn" href="{{ site.baseurl }}/arkiv/">Arkiv</a>
+				{% else %}
+					<a class="btn" href="{{ site.baseurl }}/sok/">Sök</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>
