@@ -4,7 +4,6 @@ var cssmin = require('gulp-cssmin');
 var size = require('gulp-size');
 var plumber = require('gulp-plumber');
 var prefix = require('gulp-autoprefixer');
-var header = require('gulp-header');
 var config  = require('../config').basePaths;
 
 /*-------------------------------------------------------------------
@@ -15,4 +14,5 @@ gulp.task("watch", ['sass', 'js', 'browser-sync'], function () {
     gulp.watch([config.scss.src], ['sass'], ['bs-reload']);
     gulp.watch([config.scripts.base+"main.js"], ["js"], ["jekyll-rebuild"], ["bs-reload"]);
     gulp.watch([config.jekyll.html], ["jekyll-rebuild"], ["bs-reload"]);
+    gulp.watch([config.html.base+'lunr.js'], ["jekyll-rebuild"], ["bs-reload"]);
 });
