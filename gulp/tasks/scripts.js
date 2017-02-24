@@ -17,6 +17,8 @@ const includePathOptions = {
   paths: [config.basePaths.scripts.base]
 };
 
+console.log('compiling js');
+
 gulp.task("js", () => {
   gulp.src([
     config.basePaths.scripts.base + "main.js"

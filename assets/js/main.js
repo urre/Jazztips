@@ -2457,6 +2457,10 @@ lunr.TokenStore.prototype.toJSON = function () {
 })();
 });
 
+var searchfield = document.querySelector('.searchfield');
+var resultdiv = document.querySelector('.searchcontainer');
+var timeoutId = void 0;
+
 var bLazy = new blazy$1({
   breakpoints: [{
     width: 420,
@@ -2470,10 +2474,6 @@ var bLazy = new blazy$1({
     }, 400);
   }
 });
-
-var searchfield = document.querySelector('.searchfield');
-var resultdiv = document.querySelector('.searchcontainer');
-var timeoutId = void 0;
 
 var index = lunr(function () {
   this.ref('id');
@@ -2499,20 +2499,43 @@ for (var key in window.store) {
   });
 }
 
-var search = function search() {
+var getTerm = function getTerm() {
   searchfield.addEventListener('keyup', function (event) {
     event.preventDefault();
     var query = this.value;
-    var result = index.search(query);
-    console.log(query);
-    resultdiv.innerHTML = '';
-    var searchcount = document.querySelector('.searchcount');
-    searchcount.innerHTML = 'Hittade ' + result.length + ' skivor';
-    showResults(result);
+
+    doSearch(query);
   });
 };
 
+var getQuery = function getQuery() {
+  var parser = document.createElement('a');
+  parser.href = window.location.href;
+
+  if (parser.href.includes('=')) {
+    var searchquery = decodeURIComponent(parser.href.substring(parser.href.indexOf('=') + 1));
+    searchfield.setAttribute('value', searchquery);
+
+    doSearch(searchquery);
+  }
+};
+
+var updateUrlParameter = function updateUrlParameter(value) {
+  window.history.pushState('', '', '?s=' + encodeURIComponent(value));
+};
+
+var doSearch = function doSearch(query) {
+  var result = index.search(query);
+  resultdiv.innerHTML = '';
+  var searchcount = document.querySelector('.searchcount');
+  searchcount.innerHTML = 'Hittade ' + result.length + ' skivor';
+
+  updateUrlParameter(query);
+  showResults(result);
+};
+
 var showResults = function showResults(result) {
+
   clearTimeout(timeoutId);
   timeoutId = setTimeout(function () {
     var _iteratorNormalCompletion = true;
@@ -2526,9 +2549,11 @@ var showResults = function showResults(result) {
 
         var ref = item.ref;
         var searchitem = document.createElement('div');
-        searchitem.className = "searchitem";
-        searchitem.innerHTML = '<div class="card"><a class="card-link" href="' + window.store[ref].link + '"><div class="card-image"><div class="loading"><img class="b-lazy img-responsive" src="' + window.store[ref].image + '" data-src="' + window.store[ref].image + '" alt="' + window.store[ref].title + '"/></div></div><div class="card-header"><h4 class="card-title">' + window.store[ref].artist + ' - ' + window.store[ref].title + '</h4><h6 class="card-meta">' + window.store[ref].label + '</h6></div></a></div>';
+        searchitem.className = 'searchitem';
+        searchitem.innerHTML = '<div class=\'card\'><a class=\'card-link\' href=\'' + window.store[ref].link + '\'><div class=\'card-image\'><div class=\'loading\'><img class=\'b-lazy img-responsive\' src=\'' + window.store[ref].image + '\' data-src=\'' + window.store[ref].image + '\' alt=\'' + window.store[ref].title + '\'/></div></div><div class=\'card-header\'><h4 class=\'card-title\'>' + window.store[ref].artist + ' - ' + window.store[ref].title + '</h4><h6 class=\'card-meta\'>' + window.store[ref].label + '</h6></div></a></div>';
+
         resultdiv.appendChild(searchitem);
+
         setTimeout(function () {
           bLazy.revalidate();
         }, 300);
@@ -2550,6 +2575,7 @@ var showResults = function showResults(result) {
   }, 300);
 };
 
-search();
+getTerm();
+getQuery();
 
 })));

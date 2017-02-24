@@ -9,7 +9,12 @@
   <link rel="icon" type="image/png" href="{{site.baseurl}}/images/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="{{site.baseurl}}/images/favicon-touch.png">
   
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  {% if site.buildtype == "production" %}
+  {% stylesheet main %}
+  {% else %}
+  <link rel="stylesheet" href="{{site.baseurl }}/assets/css/main.css">
+  {% endif %}
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 

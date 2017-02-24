@@ -14,7 +14,7 @@ module.exports = {
     scripts: {
       src: './_assets/js/**/*.{js}',
       base: './_assets/js/',
-      dist: './assets/'
+      dist: './assets/js/'
     },
     bower: {
       base: './bower_components/',
@@ -28,7 +28,7 @@ module.exports = {
     scss: {
       src: './_assets/scss/**/*.{sass,scss}',
       base: './_assets/scss/',
-      dist: './assets/',
+      dist: './assets/css/',
     },
     html: {
       base: './',

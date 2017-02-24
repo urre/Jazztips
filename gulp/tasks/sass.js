@@ -5,10 +5,10 @@ const plumber = require('gulp-plumber');
 const prefix = require('gulp-autoprefixer');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
-const config  = require('../config').basePaths;
+const config  = require('../config');
 
 gulp.task('sass', function() {
-    gulp.src(config.scss.src)
+    gulp.src(config.basePaths.scss.src)
     .pipe(plumber())
     .on('error', function(err) {
         console.log(err.message);
@@ -16,8 +16,12 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(prefix({ browsers: ['last 2 versions'] }))
     .pipe(cssmin())
-    .pipe(gulp.dest(config.assets.dist))
-    .pipe(browserSync.stream())
-    .pipe(gulp.dest(config.site.assets))
-    .pipe(browserSync.stream())
+    .pipe(gulp.dest(config.basePaths.site.css))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+    .pipe(gulp.dest(config.basePaths.scss.dist))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 });

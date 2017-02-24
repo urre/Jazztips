@@ -11,7 +11,7 @@ gulp.task("browser-sync", ["sass", "js", "jekyll-build"], function() {
         server: {
             baseDir: config.site.dist
         },
-        open: true,
+        open: false,
         notify: true,
         notify: {
             styles:  [

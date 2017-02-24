@@ -1,6 +1,10 @@
 import Blazy from 'Blazy'
 import lunr from 'lunr'
 
+const searchfield = document.querySelector('.searchfield')
+const resultdiv = document.querySelector('.searchcontainer')
+let timeoutId
+
 const bLazy = new Blazy({
   breakpoints: [{
     width: 420,
@@ -14,10 +18,6 @@ const bLazy = new Blazy({
     }, 400)
   }
 })
-
-const searchfield = document.querySelector('.searchfield')
-const resultdiv = document.querySelector('.searchcontainer')
-let timeoutId
 
 let index = lunr(function() {
   this.ref('id')
@@ -43,34 +43,65 @@ for (let key in window.store) {
   })
 }
 
-const search = function() {
-    searchfield.addEventListener('keyup', function(event) {
+const getTerm = function() {
+  searchfield.addEventListener('keyup', function(event) {
     event.preventDefault()
     const query = this.value
-    const result = index.search(query)
-    console.log(query);
-    resultdiv.innerHTML = ''
-    const searchcount = document.querySelector('.searchcount')
-    searchcount.innerHTML = 'Hittade ' + result.length + ' skivor'
-    showResults(result)
+    
+    doSearch(query)
+
   })
 }
 
+const getQuery = () => {
+  const parser = document.createElement('a')
+  parser.href = window.location.href
+
+  if(parser.href.includes('=')) {
+    const searchquery = decodeURIComponent(parser.href.substring(parser.href.indexOf('=') + 1))
+      searchfield.setAttribute('value', searchquery)
+      
+      doSearch(searchquery)
+  }
+
+}
+
+const updateUrlParameter = (value) => {
+  window.history.pushState('', '', `?s=${encodeURIComponent(value)}`);
+}
+
+const doSearch = query => {
+  const result = index.search(query)
+  resultdiv.innerHTML = ''
+  const searchcount = document.querySelector('.searchcount')
+  searchcount.innerHTML = `Hittade ${result.length} skivor`
+
+  updateUrlParameter(query)
+  showResults(result)
+
+}
+
 const showResults = (result) => {
+
   clearTimeout(timeoutId)
   timeoutId = setTimeout(function() {
   
     for (let item of result) {
       const ref = item.ref
       const searchitem = document.createElement('div')
-      searchitem.className = "searchitem"
-      searchitem.innerHTML = '<div class="card"><a class="card-link" href="' + window.store[ref].link + '"><div class="card-image"><div class="loading"><img class="b-lazy img-responsive" src="' + window.store[ref].image + '" data-src="' + window.store[ref].image + '" alt="' + window.store[ref].title + '"/></div></div><div class="card-header"><h4 class="card-title">' + window.store[ref].artist + ' - ' + window.store[ref].title + '</h4><h6 class="card-meta">' + window.store[ref].label + '</h6></div></a></div>'
+      searchitem.className = 'searchitem'
+      searchitem.innerHTML = `<div class='card'><a class='card-link' href='${window.store[ref].link}'><div class='card-image'><div class='loading'><img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
+      
       resultdiv.appendChild(searchitem)
+      
       setTimeout(() => {
         bLazy.revalidate()
       }, 300)
+      
     }
   }, 300)
+
 }
 
-search()
+getTerm()
+getQuery()
