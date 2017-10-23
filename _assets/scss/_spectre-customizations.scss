@@ -11,8 +11,17 @@ a {
 }
 
 .container {
-	max-width: 80%;
+	max-width: 95%;
 	margin: 0 auto;
+	@media screen and (min-width: 60rem) {
+		max-width: 80%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.columns .column {
+		width: auto;
+	}
 }
 
 .card-link {

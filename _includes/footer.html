@@ -1,21 +1,20 @@
 <footer class="footer" role="contentinfo">
 	<div class="container py4">
 		<div class="columns">
-			<div class="column xs-col-12 col-md-4">
-				{% unless page.layout == 'post' %}
-					<p><a class="btn btn-link" href="https://twitter.com/urre">Av Urban Sandén</a> <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">RSS</a></p>
-				{% else %}
-					<p>{{ site.posts | size }} <a href="{{ site.baseurl }}/arkiv/">skivtips sedan 2010</a></p>
-				{% endunless %}
+			<div class="column xs-col-12 col-md-6">
+					<p>
+						<a class="btn btn-link" href="https://twitter.com/urre">Av Urban Sandén</a>
+						<a class="btn btn-link" href="{{ site.baseurl }}/arkiv/">{{ site.posts | size }} skivtips sedan 2010</a>
+						<a class="btn btn-link" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">RSS</a>
+					</p>
 			</div>
-			<div class="column xs-col-12 col-md-4" style="margin-left: auto;">
-			{% if page.layout == 'post' %}
+			<div class="column xs-col-12 col-md-6" style="margin-left: auto;">
+
+
+			<div class="text-right">
 				<div class="text-right">
-					<p><a class="btn btn-link" href="https://urre.me">Av Urban Sandén</a> <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">RSS</a></p>
-				</div>
-			{% endif %}
-				<div class="text-center">
-					<div class="btn-group btn-group-block">
+
+					<div class="btn-group">
 						{% if paginator.previous_page %}
 						<a class="btn" href="{{ paginator.previous_page_path }}">Tidigare</a>
 						{% endif %}

@@ -15,6 +15,12 @@
   height: 28px;
 }
 
-.icon { 
+.icon {
   display: inline-block;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
