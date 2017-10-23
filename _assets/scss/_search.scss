@@ -37,3 +37,11 @@
 		// flex-basis: 1;
 	}
 }
+
+.form-input {
+	@media screen and (min-width: 60rem) {
+		height: 8rem;
+		padding: 1rem 2rem;
+		font-size: 2rem;
+	}
+}

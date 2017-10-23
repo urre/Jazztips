@@ -12,12 +12,12 @@ import rollupIncludePaths from 'rollup-plugin-includepaths';
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import uglify from 'rollup-plugin-uglify';
 
 const includePathOptions = {
   paths: [config.basePaths.scripts.base]
 };
 
-console.log('compiling js');
 
 gulp.task("js", () => {
   gulp.src([
@@ -28,10 +28,10 @@ gulp.task("js", () => {
       console.log(err.message);
     })
     .pipe(rollup({
-      entry: config.basePaths.scripts.base + "main.js",
+      input: config.basePaths.scripts.base + "main.js",
       impliedExtensions: ['.js'],
       allowRealFiles: true,
-      sourceMap: false,
+      sourcemap: false,
       format: 'umd',
       plugins: [
         babel({
@@ -45,6 +45,7 @@ gulp.task("js", () => {
           browser: true,
         }),
         commonjs(),
+        uglify(),
         rollupIncludePaths(includePathOptions)
       ]
     }))

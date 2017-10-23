@@ -1,8 +1,10 @@
 import Blazy from 'Blazy'
 import lunr from 'lunr'
 
+const searchform = document.querySelector('.searchform')
 const searchfield = document.querySelector('.searchfield')
 const resultdiv = document.querySelector('.searchcontainer')
+const searchcount = document.querySelector('.searchcount')
 let timeoutId
 
 const bLazy = new Blazy({
@@ -73,7 +75,6 @@ const updateUrlParameter = (value) => {
 const doSearch = query => {
   const result = index.search(query)
   resultdiv.innerHTML = ''
-  const searchcount = document.querySelector('.searchcount')
   searchcount.innerHTML = `Hittade ${result.length} skivor`
 
   updateUrlParameter(query)
@@ -102,6 +103,7 @@ const showResults = (result) => {
   }, 300)
 
 }
+
 
 getTerm()
 getQuery()
