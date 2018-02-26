@@ -8,9 +8,9 @@
 
   <link rel="icon" type="image/png" href="{{site.baseurl}}/images/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="{{site.baseurl}}/images/favicon-touch.png">
-  
+
   {% if site.buildtype == "production" %}
-  {% stylesheet main %}
+  {% asset main %}
   {% else %}
   <link rel="stylesheet" href="{{site.baseurl }}/assets/css/main.css">
   {% endif %}

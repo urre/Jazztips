@@ -12,8 +12,8 @@ module.exports = {
       base: './js/vendor/',
     },
     scripts: {
-      src: './_assets/js/**/*.{js}',
-      base: './_assets/js/',
+      src: './src/js/**/*.{js}',
+      base: './src/js/',
       dist: './assets/js/'
     },
     bower: {
@@ -26,8 +26,8 @@ module.exports = {
       src: './_assets/fonts/'
     },
     scss: {
-      src: './_assets/scss/**/*.{sass,scss}',
-      base: './_assets/scss/',
+      src: './src/scss/**/*.{sass,scss}',
+      base: './src/scss/',
       dist: './assets/css/',
     },
     html: {

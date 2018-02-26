@@ -16,10 +16,14 @@ const bLazy = new Blazy({
   success: (element) => {
     setTimeout(function() {
       let parent = element.parentNode
-      parent.className = parent.className.replace(/\bloading\b/, '')
+      parent.className = parent.className.replace(/\bloader\b/, '')
     }, 400)
   }
 })
+
+var resizeEvent = window.document.createEvent('UIEvents');
+resizeEvent .initUIEvent('resize', true, false, window, 0);
+window.dispatchEvent(resizeEvent);
 
 let index = lunr(function() {
   this.ref('id')
@@ -46,13 +50,14 @@ for (let key in window.store) {
 }
 
 const getTerm = function() {
-  searchfield.addEventListener('keyup', function(event) {
-    event.preventDefault()
-    const query = this.value
-    
-    doSearch(query)
+  if(searchfield) {
+    searchfield.addEventListener('keyup', function(event) {
+      event.preventDefault()
+      const query = this.value
 
-  })
+      doSearch(query)
+    })
+  }
 }
 
 const getQuery = () => {
@@ -62,7 +67,7 @@ const getQuery = () => {
   if(parser.href.includes('=')) {
     const searchquery = decodeURIComponent(parser.href.substring(parser.href.indexOf('=') + 1))
       searchfield.setAttribute('value', searchquery)
-      
+
       doSearch(searchquery)
   }
 
@@ -86,19 +91,20 @@ const showResults = (result) => {
 
   clearTimeout(timeoutId)
   timeoutId = setTimeout(function() {
-  
+
     for (let item of result) {
       const ref = item.ref
       const searchitem = document.createElement('div')
       searchitem.className = 'searchitem'
-      searchitem.innerHTML = `<div class='card'><a class='card-link' href='${window.store[ref].link}'><div class='card-image'><div class='loading'><img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
-      
+      searchitem.innerHTML = `<div class='card'><a class='card-link' href='${window.store[ref].link}'><div class='cover loader'><div class="cover-caption cover-caption-first"></div><div class="cover-caption cover-caption-second"></div>
+            <img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
+
       resultdiv.appendChild(searchitem)
-      
+
       setTimeout(() => {
         bLazy.revalidate()
       }, 300)
-      
+
     }
   }, 300)
 
