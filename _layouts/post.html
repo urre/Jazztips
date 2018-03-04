@@ -8,7 +8,7 @@ layout: default
 			<div class="card">
 				<div class="cover load">
 					<div class="cover-caption cover-caption-first"></div>
-					<img class="b-lazy img-responsive" src="{{ site.baseurl }}/images/ph.png" data-src="{{page.image}}" alt="{{page.title}}"
+					<img class="b-lazy img-responsive" src="{{ site.baseurl }}/images/ph.png" data-src="{{page.image}}" alt="{{page.title}}" role="presentation"
 					/>
 				</div>
 			</div>
@@ -16,9 +16,8 @@ layout: default
 
 		<div class="column col-xs-12 col-lg-12 col-6" style="margin-left: auto;">
 
-			<h1 class="mt0">{{page.artist}} - {{page.title}}</h1>
+			<h1>{{page.artist}} - {{page.title}}</h1>
 			{{ content }}
-
 
 			<a class="btn btn-lg btn-spotify mt-10" href="{{page.spotify}}">
 				<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

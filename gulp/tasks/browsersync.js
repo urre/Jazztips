@@ -23,7 +23,7 @@ gulp.task("browser-sync", ["sass", "js", "jekyll-build"], function() {
                 "z-index: 9999",
                 "bottom: 0px",
                 "right: 0px",
-                "background-color: #333",
+                "background-color: green",
                 "margin: 0",
                 "color: white",
                 "text-align: center"
