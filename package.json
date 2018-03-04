@@ -9,7 +9,7 @@
 		"start": "gulp",
 		"new": "node index.js",
 		"clean": "rm -rf _site",
-		"build": "NODE_ENV=production gulp prod",
+		"build": "NODE_ENV=production gulp prod"
 	},
 	"devDependencies": {
 		"async": "^2.0.1",

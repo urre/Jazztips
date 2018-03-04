@@ -1,12 +1,4 @@
-# Jazztips
-
-![](https://res.cloudinary.com/urre/image/upload/v1520162147/nrrmhz1xrnmr8ul5bqwc.png)
-
-## [Visit site](https://jazztips.se/)
-
-<a href="https://www.netlify.com">
-  <img data-src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
-</a>
+# [Jazztips](https://jazztips.se/)
 
 ### Features
 
