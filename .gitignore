@@ -1,5 +1,5 @@
 node_modules
 _site
 .asset-cache
-secrets.js
+.jekyll-cache
 purge.sh
