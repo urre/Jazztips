@@ -16,7 +16,7 @@
 + Images delivered using [Cloudinary](https://cloudinary.com/)
 + Hosted on [Netlify](https://netlify.com)
 
-## Prerequisite
+## Prerequisites
 
 + [Ruby](https://www.ruby-lang.org/en/)
 + [npm](https://www.npmjs.com/)
@@ -36,7 +36,7 @@
 
 ## Get music data for a new post
 
-    npm run new
+    yarn run new
 
 > You'll need a `.env` file with Cloudinary API keys, check `.env-example`
 
