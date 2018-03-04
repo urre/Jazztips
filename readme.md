@@ -8,10 +8,19 @@
 
 + Static website built with [Jekyll](https://jekyllrb.com/)
 + [Instant search](https://jazztips.se/sok/)
-+ Tagging [](https://jazztips.se/taggar/blade/)
++ [Tagging](https://jazztips.se/taggar/blade/)
++ Fingerprinted asset pipeline using [Jekyll Assets](https://envygeeks.io/docs/jekyll-assets)
++ [Babel](https://babeljs.io/) - for writing next generation JavaScript. Using [@babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
++ Pagination
 + Lazy loaded images using [bLazy](http://dinbror.dk/blog/blazy/)
 + Images delivered using [Cloudinary](https://cloudinary.com/)
 + Hosted on [Netlify](https://netlify.com)
+
+## Prerequisite
+
++ [Ruby](https://www.ruby-lang.org/en/)
++ [npm](https://www.npmjs.com/)
++ [Yarn](https://yarnpkg.com/lang/en/)
 
 ## Setup
 
