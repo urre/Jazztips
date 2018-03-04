@@ -4,17 +4,19 @@
 
 ## [Visit site](https://jazztips.se/)
 
+<a href="https://www.netlify.com">
+  <img data-src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
+</a>
+
 ### Features
 
 + Jekyll 3
 + Blazing fast search
 + Tags
-+ RSS Feed
-+ Hosted on Amazon S3 (Frankfurt datacenter)
 + Using blazy for lazy loading images
 + Images hosted on Cloudinary CDN
-+ Musicans using nested YAML
-+ Cloudflare
++ RSS Feed
++ Hosted on Netlify
 
 ## Setup
 
@@ -30,6 +32,4 @@
 
     npm run new
 
-## Deploy to AWS S3/Cloudflare
-
-    npm run deploy
+> You'll need a `.env` file with Cloudinary API keys, check `.env-example`

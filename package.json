@@ -9,11 +9,7 @@
 		"start": "gulp",
 		"new": "node index.js",
 		"clean": "rm -rf _site",
-		"purge": "./purge.sh",
 		"build": "NODE_ENV=production gulp prod",
-		"bundleclean": "rm Gemfile.lock && bundle clean --force && bundle install",
-		"spectre": "cp bower_components/spectre.css/dist/spectre.min.css _assets/scss/",
-		"deploy": "npm run build && aws s3 sync _site/ s3://jazztips.se --delete --region eu-central-1 && npm run purge"
 	},
 	"devDependencies": {
 		"async": "^2.0.1",
