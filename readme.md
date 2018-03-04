@@ -6,13 +6,12 @@
 
 ### Features
 
-+ Jekyll 3
-+ Blazing fast search
-+ Tags
-+ Using blazy for lazy loading images
-+ Images hosted on Cloudinary CDN
-+ RSS Feed
-+ Hosted on Netlify
++ Static website built with [Jekyll](https://jekyllrb.com/)
++ [Instant search](https://jazztips.se/sok/)
++ Tagging [](https://jazztips.se/taggar/blade/)
++ Lazy loaded images using [bLazy](http://dinbror.dk/blog/blazy/)
++ Images delivered using [Cloudinary](https://cloudinary.com/)
++ Hosted on [Netlify](https://netlify.com)
 
 ## Setup
 
