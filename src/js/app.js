@@ -16,13 +16,9 @@ const bLazy = new Blazy({
     setTimeout(function() {
       let parent = element.parentNode
       parent.className = parent.className.replace(/\bload\b/, '')
-    }, 400)
+    }, 100)
   }
 })
-
-// var resizeEvent = window.document.createEvent('UIEvents');
-// resizeEvent .initUIEvent('resize', true, false, window, 0);
-// window.dispatchEvent(resizeEvent);
 
 const searchLoader = document.querySelector('.form-icon')
 
