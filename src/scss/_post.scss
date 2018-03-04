@@ -8,10 +8,6 @@
 	margin-right: 1rem;
 }
 
-// .loading::after {
-//     display: none;
-// }
-
 .content {
 	min-height: 50vh;
 }
@@ -21,35 +17,39 @@
   height: 100%;
   width: 100%;
   position: relative;
+  // background-color: #f6f6f6;
+  padding: 1rem;
 }
 
-.cover.loader {
-	background-color: #eee;
+.cover img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.cover.load {
+	// background-color: #eee;
 }
 
 .cover-caption {
   position: absolute;
   width: 75%;
-  height: 20px;
+  height: 2px;
   left: 10%;
   background-color: #ccc;
   opacity: 0;
 }
 
-.cover.loader .cover-caption {
-	animation: loading 1s infinite;
+.cover.load .cover-caption {
+	animation: load 1s infinite;
 }
 
 .cover-caption-first {
-    bottom: 2.5rem;
+    top: 50%;
     width: 55%;
 }
 
-.cover-caption-second {
-    bottom: 5rem;
-}
 
-@keyframes loading {
+@keyframes load {
   0%   {
     opacity: 0;
     width: 0;

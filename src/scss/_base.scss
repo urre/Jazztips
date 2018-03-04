@@ -1,4 +1,12 @@
+body {
+	color: #333;
+}
+
 .container {
 	max-width: 90%;
 	margin: 0 auto;
+}
+
+a:hover {
+	text-decoration: none;
 }

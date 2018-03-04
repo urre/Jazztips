@@ -1,47 +1,39 @@
-.searchcontainer {
-	max-width: 80%;
-	margin: 0 auto;
-	box-sizing: border-box;
-}
-
-.searchcontainer {
-	min-height: 600px;
-	// width: 1200px;
-	// border: 1px solid red;
-	position: relative;
-	display: flex;
-	flex-flow: row;
-	flex-wrap: wrap;
-	box-sizing: border-box;
-	// align-items: center;
-	align-items: flex-start;
-	// justify-content: center;
-	@media screen and (min-width: 60rem) {
-		// flex-flow: row wrap;
-	}
-}
-.searchitem {
-	align-self: flex-start;
-	box-sizing: border-box;
-	// width: 33.333%;
-	// flex: 1 1 0;
-	// flex: 1;
-	flex-basis: 50%;
-	// width: 33.333%;
-	display: inline-block;
-	vertical-align: top;
-	flex-basis: 100%;
-	padding: 1rem;
-	@media screen and (min-width: 60rem) {
-		flex-basis: 33.333%;
-		// flex-basis: 1;
-	}
-}
-
 .form-input {
-	@media screen and (min-width: 60rem) {
-		height: 8rem;
-		padding: 1rem 2rem;
-		font-size: 2rem;
+	&::placeholder {
+		color: $dark-color;
 	}
+}
+
+.icon-search {
+  fill: #ccc;
+  width: 28px;
+  height: 28px;
+	 display: inline-block;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-icon {
+  opacity: 0;
+}
+
+.albumcontainer {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.albumcontainer .column {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  @media (min-width: 40em) {
+    flex-basis: 33.33333%;
+  }
 }

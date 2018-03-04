@@ -1,9 +1,8 @@
 import Blazy from 'Blazy'
 import lunr from 'lunr'
 
-const searchform = document.querySelector('.searchform')
-const searchfield = document.querySelector('.searchfield')
-const resultdiv = document.querySelector('.searchcontainer')
+const searchfield = document.querySelector('.form-input')
+const resultdiv = document.querySelector('.albumcontainer')
 const searchcount = document.querySelector('.searchcount')
 let timeoutId
 
@@ -16,14 +15,16 @@ const bLazy = new Blazy({
   success: (element) => {
     setTimeout(function() {
       let parent = element.parentNode
-      parent.className = parent.className.replace(/\bloader\b/, '')
+      parent.className = parent.className.replace(/\bload\b/, '')
     }, 400)
   }
 })
 
-var resizeEvent = window.document.createEvent('UIEvents');
-resizeEvent .initUIEvent('resize', true, false, window, 0);
-window.dispatchEvent(resizeEvent);
+// var resizeEvent = window.document.createEvent('UIEvents');
+// resizeEvent .initUIEvent('resize', true, false, window, 0);
+// window.dispatchEvent(resizeEvent);
+
+const searchLoader = document.querySelector('.form-icon')
 
 let index = lunr(function() {
   this.ref('id')
@@ -51,8 +52,12 @@ for (let key in window.store) {
 
 const getTerm = function() {
   if(searchfield) {
+
+
+
     searchfield.addEventListener('keyup', function(event) {
       event.preventDefault()
+      searchLoader.style.opacity = 1
       const query = this.value
 
       doSearch(query)
@@ -82,6 +87,10 @@ const doSearch = query => {
   resultdiv.innerHTML = ''
   searchcount.innerHTML = `Hittade ${result.length} skivor`
 
+  setTimeout(() => {
+    searchLoader.style.opacity = 0
+  }, 500)
+
   updateUrlParameter(query)
   showResults(result)
 
@@ -94,10 +103,11 @@ const showResults = (result) => {
 
     for (let item of result) {
       const ref = item.ref
+
       const searchitem = document.createElement('div')
-      searchitem.className = 'searchitem'
-      searchitem.innerHTML = `<div class='card'><a class='card-link' href='${window.store[ref].link}'><div class='cover loader'><div class="cover-caption cover-caption-first"></div><div class="cover-caption cover-caption-second"></div>
-            <img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
+
+      searchitem.className = 'column'
+      searchitem.innerHTML = `<div class='card mb2'><a class='card-link' href='${window.store[ref].link}'><div class='cover load'><div class="cover-caption cover-caption-first"></div><img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
 
       resultdiv.appendChild(searchitem)
 

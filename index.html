@@ -2,19 +2,15 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container albumcontainer">
 	{% for post in paginator.posts %}
-	{% capture modulo %}{{ forloop.index | modulo: 3 }}{% endcapture %}
-	{% if modulo == '1' %}
-	<div class="columns">
-		{% endif %}
-		<div class="column col-xs-6 col-md-4 mt-1">
-			<div class="card">
+
+		<div class="column">
+			<div class="card mb2">
 				<a class="card-link" href="{{ post.url | prepend: site.baseurl }}">
 
-					<div class="cover loader">
+					<div class="cover load">
 			  		<div class="cover-caption cover-caption-first"></div>
-    				<div class="cover-caption cover-caption-second"></div>
 					  <img class="b-lazy img-responsive"
 						 src="{{ site.baseurl }}/images/ph.png"
 						 data-src="{{post.image}}"
@@ -28,8 +24,7 @@ layout: default
 				</a>
 			</div>
 		</div>
-		{% if modulo == '0' or forloop.last %}
-	</div>
-	{% endif %}
+
+
 	{% endfor %}
 </div>

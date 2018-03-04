@@ -5,11 +5,11 @@
 ### Features
 
 + Jekyll 3
-+ Fast
++ Blazing fast search
 + Tags
 + RSS Feed
 + Hosted on Amazon S3 (Frankfurt datacenter)
-+ using s3 cli 
++ using s3 cli
 + Typeface Nitti
 + Using blazy for lazy loading images
 + Images hosted on Cloudinary CDN
@@ -25,6 +25,10 @@
     npm start
 
     npm serve
+
+## Get music data for a new post
+
+    npm run new
 
 ## Deploy to AWS S3/Cloudflare
 
