@@ -7,15 +7,6 @@
 			</h1>
 		</div>
 		<div class="">
-			{% if page.url contains "taggar" %}
-			<div class="text-right">
-				<p>Skivor med tagg:
-					<a class="btn" href="{{site.baseurl}}/taggar/{{ page.tag | replace: ',', '' }}">{{ page.tag | replace: ',', '' }}</a>
-				</p>
-			</div>
-			{% endif %}
-		</div>
-		<div class="">
 			<div class="">
 				{% if page.url contains "sok" %} {% else %}
 				<a class="" href="{{ site.baseurl }}/sok/">
@@ -27,6 +18,15 @@
 				{% endif %}
 			</div>
 		</div>
+	</div>
+	<div class="columns">
+		<div class="column text-center py2">
+					{% if page.url contains "taggar" %}
+				<h1>Skivor med tagg:
+					<a class="btn" href="{{site.baseurl}}/taggar/{{ page.tag | replace: ',', '' }}">{{ page.tag | replace: ',', '' }}</a>
+				</h1>
+			{% endif %}
+			</div>
 	</div>
 </div>
 </header>

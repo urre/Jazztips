@@ -2,32 +2,30 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container albumcontainer">
 	{% for post in page.posts %}
-	{% capture modulo %}{{ forloop.index | modulo: 3 }}{% endcapture %}
-	{% if modulo == '1' %}
-	<div class="columns">
-		{% endif %}
-		<div class="column col-4">
+
+
+		<div class="column">
 			<div class="card">
 				<a class="card-link" href="{{ post.url | prepend: site.baseurl }}">
-					<div class="card-image">
-					<div class="loading">
+
+					<div class="cover load">
+			  		<div class="cover-caption cover-caption-first"></div>
 					  <img class="b-lazy img-responsive"
 						 src="{{ site.baseurl }}/images/ph.png"
 						 data-src="{{post.image}}"
 						 alt="{{post.title}}" />
-						</div>
 					</div>
+
 					<div class="card-header">
 						<h4 class="card-title">{{post.artist}} - {{post.title}}</h4>
 						<h6 class="card-meta">{{post.skivbolag}}</h6>
 					</div>
+
 				</a>
 			</div>
 		</div>
-		{% if modulo == '0' or forloop.last %}
-	</div>
-	{% endif %}
+
 	{% endfor %}
 </div>
