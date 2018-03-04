@@ -1,5 +1,9 @@
 # [Jazztips](https://jazztips.se/)
 
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"/>
+</a>
+
 ### Features
 
 + Jekyll 3
@@ -14,14 +18,20 @@
 
     bundle install
 
+    yarn install
+
 ## Run
 
-    npm start
+    yarn run start
 
-    npm serve
+> This will open your default browser at [http://localhost:3000/](http://localhost:3000)
 
 ## Get music data for a new post
 
     npm run new
 
 > You'll need a `.env` file with Cloudinary API keys, check `.env-example`
+
+## Deploy
+
+Netlify will automatically deploy from the master branch 😎
