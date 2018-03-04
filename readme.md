@@ -1,6 +1,8 @@
 # Jazztips
 
-[Visit site](https://jazztips.se/)
+![](https://res.cloudinary.com/urre/image/upload/v1520162147/nrrmhz1xrnmr8ul5bqwc.png)
+
+## [Visit site](https://jazztips.se/)
 
 ### Features
 
