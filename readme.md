@@ -9,12 +9,10 @@
 + Tags
 + RSS Feed
 + Hosted on Amazon S3 (Frankfurt datacenter)
-+ using s3 cli
-+ Typeface Nitti
 + Using blazy for lazy loading images
 + Images hosted on Cloudinary CDN
 + Musicans using nested YAML
-+ HTTPS everywhere
++ Cloudflare
 
 ## Setup
 
