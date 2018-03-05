@@ -5639,7 +5639,7 @@ require-coercible-to-string-x@^1.0.0:
     require-object-coercible-x "^1.4.3"
     to-string-x "^1.4.5"
 
-require-dir@*:
+require-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/require-dir/-/require-dir-1.0.0.tgz#c2639de72960ea1ee280279f2da35e03c6536b2d"
 

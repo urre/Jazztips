@@ -12,7 +12,8 @@
 		"build": "NODE_ENV=production gulp prod"
 	},
 	"dependencies": {
-		"gulp": "^3.9.1"
+		"gulp": "^3.9.1",
+		"require-dir": "^1.0.0"
 	},
 	"devDependencies": {
 		"async": "^2.0.1",
@@ -46,7 +47,6 @@
 		"imagemin-pngcrush": "*",
 		"lunr": "^0.7.2",
 		"prompt-improved": "^0.1.10",
-		"require-dir": "*",
 		"rollup-plugin-babel": "^2.7.1",
 		"rollup-plugin-commonjs": "^8.0.0",
 		"rollup-plugin-includepaths": "^0.1.8",
