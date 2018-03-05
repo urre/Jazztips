@@ -49,8 +49,6 @@ for (let key in window.store) {
 const getTerm = function() {
   if(searchfield) {
 
-
-
     searchfield.addEventListener('keyup', function(event) {
       event.preventDefault()
       searchLoader.style.opacity = 1
