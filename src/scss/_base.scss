@@ -27,7 +27,9 @@ a:hover {
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn.btn-link:hover,
+.btn.btn-link:focus {
 	color: white;
 	background-color: #7d971e;
 }
