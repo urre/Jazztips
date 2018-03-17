@@ -4,7 +4,7 @@ title: Body and Shadow
 artist: Brian Blade & the Fellowship Band
 label: Middle Way Music
 year: 2017
-tags: blade, fellowship
+tags: blade fellowship
 image: https://res.cloudinary.com/urre/image/upload/v1512909141/f1x1ux6sptjufh2m3rab.jpg
 permalink: /body-and-shadow/
 spotify: undefined

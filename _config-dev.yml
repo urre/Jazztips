@@ -25,7 +25,7 @@ paginate_path: "/:num/"
 
 # Build
 buildtype: develop
-limit_posts: 6
+# limit_posts: 6
 
 # Assets using Jekyll Asset Pipeline
 assets:

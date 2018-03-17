@@ -16,7 +16,7 @@ gulp.task("browser-sync", ["sass", "js", "jekyll-build"], function() {
         notify: {
             styles:  [
                 "display: none",
-                "padding: .5rem",
+                "padding: .5rem 1rem",
                 "font-family: sans-serif",
                 "position: fixed",
                 "font-size: 0.85rem",

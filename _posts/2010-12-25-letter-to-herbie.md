@@ -10,7 +10,7 @@ cloudinarypublicid: pdvujj8weipkhbklkojc
 cloudinaryversion: 1465690281
 permalink: /letter-to-herbie/
 spotify: http://open.spotify.com/album/0XSp12wnbJYqi0gWmHd1EP
-spotify_album: 
+spotify_album:
 credits:
     musicians:
          - { name: 'Steve Tavaglione', instrument: 'Basklarinett, flöjt' }
