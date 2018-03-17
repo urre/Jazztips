@@ -9,10 +9,9 @@ layout: default
 			<div class="card mb2">
 				<a class="card-link" href="{{ post.url | prepend: site.baseurl }}">
 
-					<div class="cover load">
-			  		<div class="cover-caption cover-caption-first"></div>
-					  <img class="b-lazy img-responsive"
-						 data-src="{{post.image}}"
+					<div class="cover">
+					  <img class="img-responsive"
+						 src="{{post.image}}"
 						 alt="{{post.title}}" />
 					</div>
 					<div class="card-header">

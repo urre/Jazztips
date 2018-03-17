@@ -1,4 +1,3 @@
-import Blazy from 'Blazy'
 import lunr from 'lunr'
 
 const searchfield = document.querySelector('.form-input')
@@ -6,19 +5,6 @@ const resultdiv = document.querySelector('.albumcontainer')
 const searchcount = document.querySelector('.searchcount')
 let timeoutId
 
-const bLazy = new Blazy({
-  breakpoints: [{
-    width: 420,
-    src: 'data-src-small'
-  }],
-
-  success: (element) => {
-    setTimeout(function() {
-      let parent = element.parentNode
-      parent.className = parent.className.replace(/\bload\b/, '')
-    }, 100)
-  }
-})
 
 const searchLoader = document.querySelector('.form-icon')
 
@@ -101,7 +87,7 @@ const showResults = (result) => {
       const searchitem = document.createElement('div')
 
       searchitem.className = 'column'
-      searchitem.innerHTML = `<div class='card mb2'><a class='card-link' href='${window.store[ref].link}'><div class='cover load'><div class="cover-caption cover-caption-first"></div><img class='b-lazy img-responsive' src='${window.store[ref].image}' data-src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
+      searchitem.innerHTML = `<div class='card mb2'><a class='card-link' href='${window.store[ref].link}'><div class='cover'><img class='img-responsive' src='${window.store[ref].image}' src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a></div>`
 
       resultdiv.appendChild(searchitem)
 
