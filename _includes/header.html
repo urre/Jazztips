@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="header-wrapper">
 		<div>
-			<h1 class="mt0">
-				<a class="block" href="{{ site.baseurl }}/">Jazztips</a>
-			</h1>
+				<a class="block" href="{{ site.baseurl }}/">
+					<h1 class="mt0">Jazztips</h1>
+				</a>
 		</div>
 		<div class="">
 			<div class="">
@@ -24,8 +24,7 @@
 	<div class="columns">
 		<div class="column text-center py2">
 					{% if page.url contains "taggar" %}
-				<h1>Skivor med tagg:
-					<a class="btn" href="{{site.baseurl}}/taggar/{{ page.tag | replace: ',', '' }}">{{ page.tag | replace: ',', '' }}</a>
+				<h1>{{ page.tag | replace: ',', '' }}
 				</h1>
 			{% endif %}
 			</div>
