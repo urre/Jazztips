@@ -7,14 +7,21 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	color: #333;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 a:hover {
 	text-decoration: none;
 }
 
 .header-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .header {

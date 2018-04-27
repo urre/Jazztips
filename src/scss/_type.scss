@@ -1,26 +1,33 @@
-@font-face {
-	font-family: 'nittilight';
-	src: url('../../fonts/nitti-webfont.eot');
-	src: url('../../fonts/nitti-webfont.eot?#iefix') format('embedded-opentype'),
-	url('../../fonts/nitti-webfont.woff') format('woff'),
-	url('../../fonts/nitti-webfont.ttf') format('truetype'),
-	url('../../fonts/nitti-webfont.svg#nitti_wm2light') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'nittilight';
+// 	src: url('../../fonts/nitti-webfont.eot');
+// 	src: url('../../fonts/nitti-webfont.eot?#iefix') format('embedded-opentype'),
+// 	url('../../fonts/nitti-webfont.woff') format('woff'),
+// 	url('../../fonts/nitti-webfont.ttf') format('truetype'),
+// 	url('../../fonts/nitti-webfont.svg#nitti_wm2light') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
 
 h1 {
 	font-size: 1.5rem;
 	line-height: 1.25;
 	margin-top: 1rem;
 	@media (min-width: 40em) {
-			font-size: 1.75rem;
-			margin-top: 0;
-		}
+		font-size: 1.75rem;
+		margin-top: 0;
+	}
 }
 
-h2, h3, h4, ul, li, p, * {
+h2,
+h3,
+h4,
+ul,
+li,
+p,
+* {
 	font-size: 1rem;
 	line-height: 1.5;
-	font-family: 'nittilight';
+	font-family: 'Arimo', sans-serif;
+	letter-spacing: 0.1rem;
 }
