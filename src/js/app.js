@@ -31,6 +31,14 @@ for (let key in window.store) {
 	})
 }
 
+const runServiceWorker = () => {
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/serviceworker.js')
+		})
+	}
+}
+
 const getTerm = function() {
 	if (searchfield) {
 		searchfield.addEventListener('keyup', function(event) {
@@ -104,5 +112,6 @@ const showResults = result => {
 	}, 300)
 }
 
+runServiceWorker()
 getTerm()
 getQuery()
