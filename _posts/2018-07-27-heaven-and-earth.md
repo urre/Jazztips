@@ -40,7 +40,7 @@ credits:
 
 ---
 
-Kamasi har blivit hiphopgenerationens största jazz-stjärnorna tack vare samarbeten med Kendrick Lamar på exempelvis "To Pimp a Butterfly".
-Fantastiska mastodontalbumet "Heaven And Earth" är produkt av sin tid och en del av den nya medborgarrättsrörelsen i USA som växer sig allt starkare. 144 minuter värdig uppföljare till "The Epic" 2016.
+Kamasi har blivit hiphopgenerationens största jazz-stjärna tack vare samarbeten med Kendrick Lamar på exempelvis "To Pimp a Butterfly".
+Fantastiska mastodontalbumet "Heaven And Earth" är en produkt av sin tid och en del av den nya medborgarrättsrörelsen i USA som växer sig allt starkare. 144 minuter värdig uppföljare till "The Epic" 2016.
 
 [På Way Out West 11 augusti](https://www.wayoutwest.se/line-up/kamasi-washington-2/)
