@@ -19,7 +19,7 @@ p a {
     color: #7d971e;
 
     &:hover {
-        text-decoration: none;
+        text-decoration: underline;
     }
 }
 
@@ -49,4 +49,9 @@ a:hover {
 .btn.btn-link:focus {
     color: white;
     background-color: #7d971e;
+}
+
+a:focus {
+    outline: initial;
+    outline: -webkit-focus-ring-color auto 5px;
 }

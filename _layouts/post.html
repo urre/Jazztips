@@ -48,13 +48,13 @@ layout: default
 
 			<div class="mt2">
 				{% for tag in page.tags limit:4 %}
-				<a class="btn" href="{{site.baseurl}}/taggar/{{ tag | replace: ',', '' }}">{{ tag | replace: ',', '' }}</a> {% endfor
+				<a class="btn" href="{{site.baseurl}}/taggar/{{ tag }}">{{ tag }}</a> {% endfor
 				%}
 			</div>
 
 			{% if page.url contains "taggar" %}
 			<div class="text-right">
-				<p>Skivor med tagg: {{ page.tag | replace: ',', '' }}</p>
+				<p>Skivor med tagg: {{ page.tag }}</p>
 			</div>
 			{% endif %}
 
