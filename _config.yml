@@ -34,6 +34,7 @@ exclude:
   - bin
   - node_modules
   - index.js
+  - src
 
 # Assets using Jekyll Asset Pipeline
 assets:

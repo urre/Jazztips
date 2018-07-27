@@ -10,7 +10,7 @@
 		"new": "node index.js",
 		"clean": "rm -rf _site",
 		"build": "gulp prod",
-		"publish": "git add -A && git commit -m 'New record' && git push origin master"
+		"release": "git add -A && git commit -m 'New record' && git push origin master"
 	},
 	"dependencies": {
 		"gulp": "^3.9.1"
