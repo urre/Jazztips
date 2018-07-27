@@ -1,39 +1,40 @@
 .form-input {
-	&::placeholder {
-		color: $dark-color;
-	}
+    &::placeholder {
+        color: $dark-color;
+    }
 }
 
 .icon-search {
-	display: block;
-	width: 28px;
-	height: 28px;
+    display: block;
+    width: 28px;
+    height: 28px;
 }
 
 .icon-search-svg {
-	fill: #ccc;
-	width: 28px;
-	height: 28px;
-	display: inline-block;
+    fill: black;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
 }
 
 .form-icon {
-	opacity: 0;
+    opacity: 0;
 }
 
 .albumcontainer {
-	max-width: 90%;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .albumcontainer .column {
-	flex-grow: 0;
-	flex-shrink: 0;
-	flex-basis: 100%;
-	@media (min-width: 40em) {
-		flex-basis: 33.33333%;
-	}
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+
+    @media (min-width: 40em) {
+        flex-basis: 33.33333%;
+    }
 }
