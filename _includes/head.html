@@ -9,13 +9,15 @@
   <link rel="icon" type="image/png" href="{{site.baseurl}}/images/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="{{site.baseurl}}/images/favicon-touch.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|IBM+Plex+Sans:400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap" rel="stylesheet">
 
-  {% if site.buildtype == "production" %}
-  {% asset main %}
-  {% else %}
-  <link rel="stylesheet" href="{{site.baseurl }}/assets/css/main.css">
-  {% endif %}
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl }}/assets/css/main.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
+	integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+	crossorigin="anonymous"></script>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
@@ -71,6 +73,5 @@
   <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | markdownify | strip_html | strip_newlines | truncate: 160 | escape_once }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
   <meta name="twitter:url" content="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
-
 
 </head>

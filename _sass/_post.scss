@@ -1,0 +1,61 @@
+.btn-spotify svg {
+	width: 24px;
+	height: 24px;
+	opacity: 1;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.content {
+	min-height: 50vh;
+}
+
+.cover img {
+	border: 1px solid #ccc;
+	object-position: top center;
+	object-fit: cover;
+	width: 100%;
+}
+
+.cover-caption {
+	position: absolute;
+	width: 75%;
+	height: 2px;
+	left: 10%;
+	background-color: #ccc;
+	opacity: 0;
+}
+
+.cover.load .cover-caption {
+	animation: load 1s infinite;
+}
+
+.cover-caption-first {
+	top: 50%;
+	width: 55%;
+}
+
+@keyframes load {
+	0% {
+		opacity: 0;
+		width: 0;
+	}
+
+	80% {
+		opacity: 1;
+		width: 100;
+	}
+
+	100% {
+		opacity: 0;
+		width: 100;
+	}
+}
+
+.card-link {
+	display: block;
+	background-color: white;
+	border-radius: 10px;
+	padding: 1rem;
+}

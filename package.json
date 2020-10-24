@@ -9,7 +9,7 @@
 		"start": "gulp",
 		"new": "node index.js",
 		"clean": "rm -rf _site",
-		"build": "gulp prod",
+		"build": "bundle exec jekyll build --config _config.yml",
 		"release": "git add -A && git commit -m 'New record' && git push origin master"
 	},
 	"dependencies": {

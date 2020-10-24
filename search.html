@@ -4,22 +4,18 @@ title: Sök
 permalink: /sok/
 ---
 
-<div class="container mb4">
-	<div class="columns">
-		<div class="column col-md-12 col-8 col-mx-auto">
-			<form class="searchform" action="/sok" method="get" role="search">
-				<div class="has-icon-right">
-				<input type="search" class="form-input" placeholder="Sök album, musiker, skivbolag, taggar..." autofocus>
-					<i class="form-icon loading"></i>
-				</div>
-			</form>
-		</div>
-		</div>
-		<div class="columns">
-		<div class="column col-md-12 col-8 col-mx-auto py2">
-			<p class="searchcount"></p>
-		</div>
+<header class="px-10 py-10 container mx-auto" role="banner">
+	<form class="searchform" action="/sok" method="get" role="search">
+		<input type="search"
+			class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+			placeholder="Sök album, musiker, skivbolag, taggar..." autofocus>
+	</form>
+
+	<p class="searchcount mt-4"></p>
+</header>
+
+
+<div class="px-10 mx-auto container">
+	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 albumcontainer">
 	</div>
 </div>
-
-<div class="albumcontainer"></div>

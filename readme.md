@@ -9,34 +9,23 @@
 + Static website built with [Jekyll](https://jekyllrb.com/)
 + [Instant search](https://jazztips.se/sok/)
 + [Tagging](https://jazztips.se/taggar/blade/)
-+ Fingerprinted asset pipeline using [Jekyll Assets](https://envygeeks.io/docs/jekyll-assets)
-+ [Babel](https://babeljs.io/) - for writing next generation JavaScript. Using [@babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
 + Pagination
-+ Lazy loaded images using [bLazy](http://dinbror.dk/blog/blazy/)
 + Images delivered using [Cloudinary](https://cloudinary.com/)
 + Hosted on [Netlify](https://netlify.com)
 
 ## Prerequisites
 
-+ [Ruby](https://www.ruby-lang.org/en/)
-+ [npm](https://www.npmjs.com/)
-+ [Yarn](https://yarnpkg.com/lang/en/)
-
-## Setup
-
-    bundle install
-
-    yarn install
++ [Docker](https://docker.com)
 
 ## Run
 
-    yarn run start
+    docker-compose up
 
-> This will open your default browser at [http://localhost:3000/](http://localhost:3000)
+> This will open your default browser at [http://0.0.0.0:4000/](http://0.0.0.0:4000/)
 
 ## Get music data for a new post
 
-    yarn run new
+    npm run new
 
 > You'll need a `.env` file with Cloudinary API keys, check `.env-example`
 
