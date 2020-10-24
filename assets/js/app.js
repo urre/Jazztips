@@ -3,9 +3,6 @@ const resultdiv = document.querySelector('.albumcontainer')
 const searchcount = document.querySelector('.searchcount')
 let timeoutId
 var index
-// const searchLoader = document.querySelector('.form-icon')
-
-// document.addEventListener('DOMContentLoaded', function () {
 index = lunr(function () {
 	this.ref('id')
 	this.field('title', { boost: 10 })
@@ -31,13 +28,11 @@ index = lunr(function () {
 
 console.log(index)
 
-// })
-
 const getTerm = function () {
 	if (searchfield) {
 		searchfield.addEventListener('keyup', function (event) {
 			event.preventDefault()
-			// searchLoader.style.opacity = 1
+
 			const query = this.value
 
 			doSearch(query)
@@ -67,10 +62,6 @@ const doSearch = (query) => {
 	const result = index.search(query)
 	resultdiv.innerHTML = ''
 	searchcount.innerHTML = `Hittade ${result.length} skivor`
-
-	// setTimeout(() => {
-	// 	searchLoader.style.opacity = 0
-	// }, 500)
 
 	updateUrlParameter(query)
 	showResults(result)
