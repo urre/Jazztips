@@ -12,9 +12,6 @@
 		"build": "bundle exec jekyll build --config _config.yml",
 		"release": "git add -A && git commit -m 'New record' && git push origin master"
 	},
-	"dependencies": {
-		"gulp": "^3.9.1"
-	},
 	"devDependencies": {
 		"async": "^2.0.1",
 		"babelify": "^8.0.0",
