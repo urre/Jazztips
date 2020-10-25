@@ -49,4 +49,5 @@ tag_permalink_style: pretty
 plugins:
 - jekyll-feed
 - jekyll-seo-tag
-- jekyll-tagging
+- jekyll/tagging
+- jekyll-paginate
