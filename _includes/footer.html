@@ -13,30 +13,6 @@
 			</p>
 		</div>
 
-
-		<div class="justify-self-end">
-			{% if paginator.previous_page %}
-			<a href="{{ paginator.previous_page_path }}"
-				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-2">
-				← Previous
-			</a>
-			{% else %}
-			<span class="bg-white text-gray-800 font-semibold py-2 px-4">Previous</span>
-			{% endif %}
-
-			{% if paginator.next_page %}
-			<a href="{{ paginator.next_page_path }}"
-				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Next
-				→</a>
-			{% else %}
-			<span class="bg-white text-gray-800 font-semibold py-2 px-4">Next</span>
-			{% endif %}
-		</div>
-
-
-
-
-
 	</div>
 
 </footer>
