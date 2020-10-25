@@ -7,47 +7,37 @@ layout: default
 		<div class="">
 
 			<div class=""">
-				<img loading="lazy" class="w-cover h-cover rounded-md border-solid border-opacity-50 border" src="{{page.image}}" alt="{{page.title}}" role="presentation" />
-			</div>
-
+				<img loading=" lazy" class="w-cover h-cover rounded-md border-solid border-opacity-50 border" src="{{page.image}}"
+				alt="{{page.title}}" role="presentation" />
 		</div>
 
-		<div class="">
+	</div>
 
-			<h1 class="text-4xl">{{page.artist}} - {{page.title}}</h1>
+	<div class="">
 
-			<p class="text-xl mb-4">{{ content  | remove: '<p>' | remove: '</p>' }}</p>
+		<h1 class="text-4xl">{{page.artist}} - {{page.title}}</h1>
 
-			<div class="mt-16 mb-16">
+		<p class="text-xl mb-4">{{ content  | remove: '<p>' | remove: '</p>' }}</p>
 
-			<a class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow text-lg mr-2" href="{{page.spotify}}">
-				<svg class="inline-flex h-4 w-4" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink">
-					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<g id="spotify-icon">
-							<g id="Page-1" transform="translate(16.000000, 16.000000)">
-								<path
-									d="M468,234 C468,363.234037 363.234037,468 234,468 C104.765006,468 0,363.234037 0,234 C0,104.765006 104.765006,0 234,0 C363.234037,0 468,104.765006 468,234"
-									id="Fill-1" fill="#87A421"></path>
-								<path
-									d="M373.719821,167.986542 C321.315306,143.26772 264.954324,130.750395 206.062888,130.750395 C175.406496,130.750395 144.880263,134.274272 115.252704,141.224407 C105.442888,143.520383 99.490962,154.716015 101.918054,163.962125 C104.345146,173.209193 114.253539,178.869217 124.064312,176.573242 C150.798692,170.315058 178.39825,167.138591 206.095428,167.138591 C259.233048,167.138591 310.109146,178.428972 357.391502,200.726444 C359.986079,201.954346 362.779723,202.550591 365.506373,202.550591 C372.25744,202.550591 378.674496,197.236064 381.932312,191.16642 C386.421858,182.641929 382.76495,172.232996 373.719821,167.986542"
-									id="Fill-3" fill="#FFFFFF"></path>
-								<path
-									d="M206.063175,277.022599 C181.357752,277.022599 156.95093,280.449813 133.507863,287.33774 C126.258169,289.38201 122.236623,303.912022 124.463691,310.798991 C126.690758,317.624709 134.37304,321.492169 141.621777,319.321568 C162.403274,313.220341 184.117899,310.140537 206.063175,310.140537 C242.705948,310.140537 278.985998,318.913863 310.940157,335.646059 L317.558194,337.249126 C322.411421,337.249126 327.100991,334.795237 329.52904,330.487531 C333.154366,324.22839 330.826807,309.038967 324.142734,305.611752 C288.1632,286.92812 247.329482,277.022599 206.063175,277.022599"
-									id="Fill-5" fill="#FFFFFF"></path>
-								<path
-									d="M348.08213,239.061961 C304.522719,217.676562 255.443013,206.323016 206.097247,206.323016 C178.563725,206.323016 151.164191,209.781813 124.729369,216.607531 C116.21732,218.808758 111.195652,232.552071 113.52321,240.60282 C115.850768,248.653568 124.628879,253.37185 133.174425,251.202206 C156.850056,245.100979 181.422449,241.987679 206.09629,241.987679 C250.986964,241.987679 293.749148,251.831948 333.38559,271.298452 C335.713148,272.461274 338.238817,273.058476 340.732903,273.058476 C346.552756,273.058476 352.10559,264.568439 354.965271,259.409912 C358.957148,252.019531 355.8984,242.868169 348.08213,239.061961"
-									id="Fill-7" fill="#FFFFFF"></path>
-							</g>
-						</g>
-					</g>
-				</svg>
+		<div class="mt-16 mb-16">
+
+			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light inline-block py-2 px-4 border border-gray-400 rounded shadow text-lg mr-2"
+				href="{{page.spotify}}">
+
+
+				<svg class="inline-flex h-6 w-6 mr-1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+					fill="#000">
+					<path
+						d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm4.87 17.66c-.2 0-.33-.06-.51-.18a12.03 12.03 0 0 0-6.2-1.6c-1.3 0-2.59.16-3.8.42-.19.04-.44.11-.59.11a.75.75 0 0 1-.75-.75c0-.5.29-.75.65-.82 1.48-.34 2.96-.53 4.49-.53 2.62 0 4.97.6 6.98 1.8.3.18.47.36.47.8 0 .43-.35.75-.74.75zm1.3-3.17c-.25 0-.42-.1-.6-.21a15.22 15.22 0 0 0-7.62-1.93c-1.51 0-2.83.21-3.91.5-.24.07-.37.14-.59.14a.94.94 0 0 1-.93-.95c0-.5.24-.86.74-1C6.61 10.67 8 10.4 10 10.4c3.15 0 6.18.78 8.57 2.2.4.24.55.53.55.96 0 .52-.41.94-.93.94zm1.5-3.7c-.25 0-.4-.06-.62-.18-2.18-1.3-5.55-2.02-8.8-2.02-1.63 0-3.29.16-4.8.57-.17.05-.4.14-.62.14-.64 0-1.13-.51-1.13-1.15 0-.65.4-1.02.84-1.15 1.71-.5 3.62-.74 5.7-.74 3.52 0 7.23.73 9.94 2.32.36.2.62.52.62 1.09 0 .65-.53 1.12-1.14 1.12z" />
+					</svg>
+
 				Lyssna i Spotify
 			</a>
 
-			<a class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow text-lg" href="https://listen.tidal.com/search?q={{page.artist | url_encode }}+{{page.title | url_encode }}">
+			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light inline-block py-2 px-4 border border-gray-400 rounded shadow text-lg"
+				href="https://listen.tidal.com/search?q={{page.artist | url_encode }}+{{page.title | url_encode }}">
 
-				<svg class="inline-flex h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<svg class="inline-flex h-6 w-6 mr-1" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>Tidal icon</title>
 					<path
 						d="M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996 4.004 12l4.004-4.004L12.012 12l-4.004 4.004 4.004 4.004 4.004-4.004L12.012 12l4.004-4.004-4.004-4.004zM16.042 7.996l3.979-3.979L24 7.996l-3.979 3.979z" />
@@ -55,39 +45,43 @@ layout: default
 				Lyssna i TIDAL
 			</a>
 
-			</div>
+		</div>
 
-			<p class="text-xl mt-16">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a></p>
-			<h3 class="text-2xl mt-16 mb-4">Medverkande</h3>
-			<p class="text-xl grid grid-cols-2 gap-4 mb-4">
+		<p class="text-xl mt-16">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a>
+		</p>
+		<h3 class="text-2xl mt-16 mb-4">Medverkande</h3>
+		<p class="text-xl grid grid-cols-2 gap-4">
 
-				{% if page.credits.musicians %}
-					{% for musician in page.credits.musicians.musician %}
-						{{ musician.instrument | capitalize}} <a class="" href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a>
-					{% endfor %}
-				{% endif %}
-
-				{% if page.credits %}
-					{% for peoples in page.credits %} {{ peoples.instrument | capitalize }}
-						<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }} </a>
-					{% endfor %}
-				{% endif %}
-
-			</p>
-
-			<div class="text-xl mt-8">
-				{% for tag in page.tags limit:4 %}
-				<a class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow text-lg" href="{{site.baseurl}}/taggar/{{ tag }}">{{ tag }}</a> {% endfor
-				%}
-			</div>
-
-			{% if page.url contains "taggar" %}
-			<div class="">
-				<p>Skivor med tagg: {{ page.tag }}</p>
-			</div>
+			{% if page.credits.musicians %}
+			{% for musician in page.credits.musicians.musician %}
+			{{ musician.instrument | capitalize}} <a class="block hover:text-green-600"
+				href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a>
+			{% endfor %}
 			{% endif %}
 
+			{% if page.credits %}
+			{% for peoples in page.credits %} {{ peoples.instrument | capitalize }}
+			<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }} </a>
+			{% endfor %}
+			{% endif %}
 
+		</p>
+
+		<div class="text-xl mt-8">
+			<h3 class="text-2xl mt-16 mb-4">Taggar</h3>
+			{% for tag in page.tags limit:4 %}
+			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light py-2 px-4 border border-gray-400 rounded shadow text-lg inline-block"
+				href="{{site.baseurl}}/taggar/{{ tag }}">{{ tag }}</a> {% endfor
+				%}
 		</div>
+
+		{% if page.url contains "taggar" %}
+		<div class="">
+			<p>Skivor med tagg: {{ page.tag }}</p>
+		</div>
+		{% endif %}
+
+
 	</div>
+</div>
 </div>
