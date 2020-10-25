@@ -1,16 +1,16 @@
 <header class="px-10 py-10 container mx-auto" role="banner">
 
-		<div class="grid grid-cols-2">
+	<div class="grid grid-cols-2">
 
-			<a class="" href="{{ site.baseurl }}/">
-				<h1 class="text-3xl">
-					<span class="inline-flex w-4 h-4 mr-2 bg-green-400 rounded-full"></span>
-					Jazztips
-				</h1>
-			</a>
+		<a class="" href="{{ site.baseurl }}/">
+			<h1 class="text-3xl">
+				<span class="inline-flex w-4 h-4 mr-2 bg-green-400 rounded-full"></span>
+				Jazztips
+			</h1>
+		</a>
 
 
-			<div class="flex justify-self-end">
+		<div class="flex justify-self-end">
 
 
 
@@ -18,10 +18,11 @@
 
 			{% if paginator.previous_page %}
 			<a href="{{ paginator.previous_page_path }}"
-				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-2">
-				<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-</svg>
+				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-2 inline-block">
+				<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+				</svg>
 			</a>
 			{% else %}
 
@@ -29,19 +30,19 @@
 
 			{% if paginator.next_page %}
 			<a href="{{ paginator.next_page_path }}"
-				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-				<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-</svg>
-				</a>
+				class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow inline-block">
+				<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+				</svg>
+			</a>
 			{% else %}
 
 			{% endif %}
 
 
 			{% if page.url contains "sok" %} {% else %}
-			<a class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4"
-				href="{{ site.baseurl }}/sok/">
+			<a class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4" href="{{ site.baseurl }}/sok/">
 				<svg aria-labelledby="searchID searchDesc" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 24 24"
 					class="inline-flex h-6 w-6">
@@ -53,10 +54,10 @@
 				</svg>
 			</a>
 			{% endif %}
-			</div>
-
-
 		</div>
+
+
+	</div>
 
 
 </header>

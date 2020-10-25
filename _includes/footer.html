@@ -1,5 +1,33 @@
 <footer class="px-10 py-10 container mx-auto" role="contentinfo">
 
+
+	<div class="flex justify-end mb-4">
+
+
+		{% if paginator.previous_page %}
+		<a href="{{ paginator.previous_page_path }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mr-2 inline-block">
+			<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+				stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+			</svg>
+		</a>
+		{% else %}
+
+		{% endif %}
+
+		{% if paginator.next_page %}
+		<a href="{{ paginator.next_page_path }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow inline-block">
+			<svg class="inline-flex h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+				stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+			</svg>
+		</a>
+		{% else %}
+
+		{% endif %}
+
+	</div>
+
 	<div class="grid grid-cols-1 md:grid-cols-2">
 
 		<div class="">
