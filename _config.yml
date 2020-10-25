@@ -20,7 +20,7 @@ twitter:
   username: jazztps
 
 # Pagination
-paginate: 18
+paginate: 16
 paginate_path: "/:num/"
 
 # Build
@@ -38,7 +38,7 @@ exclude:
 
 # Sass
 sass:
-  style: compact # possible values: nested expanded compact compressed
+  style: compact
 
 # Tag page
 tag_page_layout: tag_page

@@ -29,7 +29,7 @@ limit_posts: 32
 
 # Sass
 sass:
-  style: compact # possible values: nested expanded compact compressed
+  style: compact
 
 # Exclude in build
 exclude:
