@@ -8,6 +8,7 @@ tags: reynolds saxofon kvartett
 image: https://res.cloudinary.com/urre/image/upload/v1506179691/a2799578864_10_xdpycm.jpg
 permalink: /hindsight/
 spotify: https://open.spotify.com/track/2BXLMV1bZlsSvTnr8uBn1F
+tidal: 77980659
 credits:
 - { name: "Bob Reynolds", instrument: "Saxofon"}
 - { name: "Aaron Goldberg", instrument: "Piano"}

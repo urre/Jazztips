@@ -15,21 +15,27 @@ layout: default
 
 	<div class="">
 
-		<h1 class="text-4xl">{{page.artist}} - {{page.title}}</h1>
+		<h1 class="text-4xl mb-4">{{page.artist}} - {{page.title}}</h1>
 
 		<p class="text-xl mb-4">{{ content  | remove: '<p>' | remove: '</p>' }}</p>
 
-		<div class="mt-16 mb-16">
+		<!-- Label -->
+		<p class="text-l mt-8 mb-16 uppercase">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a>
+		</p>
 
-			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light inline-block py-2 px-4 border border-gray-400 rounded shadow text-lg mr-2"
+
+
+		<div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-2">
+
+			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light inline-block py-2 px-4 border border-gray-400 rounded shadow text-lg"
 				href="{{page.spotify}}">
 
 
-				<svg class="inline-flex h-6 w-6 mr-1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-					fill="#000">
+				<svg class="inline-flex h-6 w-6 mr-1" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+					viewBox="0 0 24 24" fill="#000">
 					<path
 						d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm4.87 17.66c-.2 0-.33-.06-.51-.18a12.03 12.03 0 0 0-6.2-1.6c-1.3 0-2.59.16-3.8.42-.19.04-.44.11-.59.11a.75.75 0 0 1-.75-.75c0-.5.29-.75.65-.82 1.48-.34 2.96-.53 4.49-.53 2.62 0 4.97.6 6.98 1.8.3.18.47.36.47.8 0 .43-.35.75-.74.75zm1.3-3.17c-.25 0-.42-.1-.6-.21a15.22 15.22 0 0 0-7.62-1.93c-1.51 0-2.83.21-3.91.5-.24.07-.37.14-.59.14a.94.94 0 0 1-.93-.95c0-.5.24-.86.74-1C6.61 10.67 8 10.4 10 10.4c3.15 0 6.18.78 8.57 2.2.4.24.55.53.55.96 0 .52-.41.94-.93.94zm1.5-3.7c-.25 0-.4-.06-.62-.18-2.18-1.3-5.55-2.02-8.8-2.02-1.63 0-3.29.16-4.8.57-.17.05-.4.14-.62.14-.64 0-1.13-.51-1.13-1.15 0-.65.4-1.02.84-1.15 1.71-.5 3.62-.74 5.7-.74 3.52 0 7.23.73 9.94 2.32.36.2.62.52.62 1.09 0 .65-.53 1.12-1.14 1.12z" />
-					</svg>
+				</svg>
 
 				Lyssna i Spotify
 			</a>
@@ -47,8 +53,21 @@ layout: default
 
 		</div>
 
-		<p class="text-xl mt-16">{{page.year}} <a href="spotify:search:label:{{ page.label | slugify }}"> {{page.label}}</a>
-		</p>
+
+	<!-- Embeds -->
+	{% assign spotify_id = page.spotify | split: 'track/' %}
+		<div class="mt-4 mb-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+			<iframe class="rounded" src="https://open.spotify.com/embed/track/{{ spotify_id[1] }}" width="100%" height="120" frameborder="0"
+				allowtransparency="true" allow="encrypted-media"></iframe>
+
+			{% if page.tidal %}
+				<iframe class="rounded" src="https://embed.tidal.com/albums/{{page.tidal}}" style="border: 0; width: 100%; height: 120px;" allowfullscreen allow="encrypted-media"></iframe>
+			{% endif %}
+		</div>
+
+
+
+		<!-- Musicians -->
 		<h3 class="text-2xl mt-16 mb-4">Medverkande</h3>
 		<p class="text-xl grid grid-cols-2 gap-4">
 
@@ -67,12 +86,14 @@ layout: default
 
 		</p>
 
+		<!-- Taggar -->
 		<div class="text-xl mt-8">
 			<h3 class="text-2xl mt-16 mb-4">Taggar</h3>
+			<div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
 			{% for tag in page.tags limit:4 %}
-			<a class="bg-white hover:bg-gray-100 text-gray-800 font-light py-2 px-4 border border-gray-400 rounded shadow text-lg inline-block"
-				href="{{site.baseurl}}/taggar/{{ tag }}">{{ tag }}</a> {% endfor
-				%}
+				<a class="bg-white hover:bg-gray-100 text-gray-800 font-light py-2 px-4 border border-gray-400 rounded shadow text-lg inline-block" href="{{site.baseurl}}/taggar/{{ tag }}">{{ tag }}</a>
+			{% endfor%}
+			</div>
 		</div>
 
 		{% if page.url contains "taggar" %}

@@ -8,6 +8,7 @@ tags: kamasi washington saxophone
 image: https://res.cloudinary.com/urre/image/upload/v1532678157/oe56vu746gyciq7cvsps.jpg
 permalink: /heaven-and-earth/
 spotify: https://open.spotify.com/track/5Nora499oDSATImRP0lcKh?si=sjCJq-s-S66KIBppW5vlxg
+tidal: 90089038
 credits:
 - { name: "Kamasi Washington", instrument: "Sax (tenor)"}
 - { name: "Laura Brenes", instrument: "French Horn"}
