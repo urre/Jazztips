@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "docker-compose up",
-		"stop": "docker-compose stop && rm Gemfile.lock",
+		"stop": "docker-compose stop",
 		"new": "node index.js",
 		"clean": "rm -rf _site",
 		"build": "bundle install && bundle exec jekyll build --config _config.yml",
