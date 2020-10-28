@@ -5,8 +5,7 @@ email: hej@urre.me
 description: Tips om bra musik
 # baseurl: ""
 url: "https://jazztips.se"
-
-logo: /images/favicon.png
+logo: /images/og.png
 timezone: Europe/Stockholm
 locale: sv_SE
 author:

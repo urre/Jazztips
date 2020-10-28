@@ -71,14 +71,14 @@ layout: default
 
 			{% if page.credits.musicians %}
 			{% for musician in page.credits.musicians.musician %}
-			{{ musician.instrument | capitalize}} <a class="block hover:text-green-600"
-				href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a>
+			<a class="block hover:text-green-600"
+				href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }} </a>{{ musician.instrument | capitalize}}
 			{% endfor %}
 			{% endif %}
 
 			{% if page.credits %}
-			{% for peoples in page.credits %} {{ peoples.instrument | capitalize }}
-			<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }} </a>
+			{% for peoples in page.credits %}
+			<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }} </a>{{ peoples.instrument | capitalize }}
 			{% endfor %}
 			{% endif %}
 
