@@ -26,10 +26,17 @@ layout: default
 
 
 		<!-- Embeds -->
-		{% assign spotify_id = page.spotify | split: 'track/' %}
+		{% if page.spotify contains 'track' %}
+			{% assign spotify_id = page.spotify | split: 'track/' %}
+			{% assign spotify_embed = spotify_id[1] | prepend: 'https://open.spotify.com/embed/track/' %}
+		{% else %}
+			{% assign spotify_id = page.spotify | split: 'album/' %}
+			{% assign spotify_embed = spotify_id[1] | prepend: 'https://open.spotify.com/embed/album/' %}
+		{% endif %}
+
 		<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
 			{% if page.spotify %}
-			<iframe class="rounded" src="https://open.spotify.com/embed/track/{{ spotify_id[1] }}" width="100%" height="120"
+			<iframe class="rounded" src="{{ spotify_embed }}" width="100%" height="120"
 				frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 			{% endif %}
 
@@ -106,14 +113,14 @@ layout: default
 			{% if page.credits.musicians %}
 			{% for musician in page.credits.musicians.musician %}
 			<a class="block hover:text-green-600" href="spotify:search:{{ musician.name | slugify }}">{{ musician.name  }}
-			</a>{{ musician.instrument | capitalize}}
+			</a> <span class="">{{ musician.instrument | capitalize}}</span>
 			{% endfor %}
 			{% endif %}
 
 			{% if page.credits %}
 			{% for peoples in page.credits %}
-			<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}">{{ peoples.name  }}
-			</a>{{ peoples.instrument | capitalize }}
+			<a class="hover:text-green-600" href="spotify:search:{{ peoples.name | slugify }}"> {{ peoples.name }}
+			</a><span class="" style="font-variant: small-caps;">{{ peoples.instrument | capitalize }}</span>
 			{% endfor %}
 			{% endif %}
 
