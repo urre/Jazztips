@@ -7,7 +7,7 @@ year: 2017
 tags: blade fellowship
 image: https://res.cloudinary.com/urre/image/upload/v1512909141/f1x1ux6sptjufh2m3rab.jpg
 permalink: /body-and-shadow/
-spotify: undefined
+spotify:
 credits:
 - { name: "Melvin Butler", instrument: "Group, Member  Sax (Tenor)"}
 - { name: "Dave Devine", instrument: "Group, Member  Gitarr"}
@@ -17,4 +17,3 @@ credits:
 - { name: "Myron Walden", instrument: "Clarinet, (Bas)  Group Member,  Sax (Alto)"}
 
 ---
-
