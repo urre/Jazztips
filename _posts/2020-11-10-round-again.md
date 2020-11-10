@@ -2,7 +2,7 @@
 layout: post
 title: RoundAgain
 artist: Joshua Redman
-label: Nones
+label: Nonesuch
 year: 2020
 tags: [mcbride, redman, blade, mehldau, kvartett]
 image: https://res.cloudinary.com/urre/image/upload/v1605008240/screenshots/v5azw7iliy3aqb31o9pw.jpg
