@@ -5,7 +5,7 @@ artist: Till Brönner And Bob James
 label: Sony
 year: 2020
 tags: [james, bronner, flygelhorn, mason, smooth, soft]
-image: https://res.cloudinary.com/urre/image/upload/v1605001500/screenshots/zslawza8yugaqh13hgkh.png
+image: https://res.cloudinary.com/urre/image/upload/v1605001500/screenshots/zslawza8yugaqh13hgkh.jpg
 permalink: /space-sailors/
 spotify: https://open.spotify.com/album/0lkjkN4nOGZeFr0hxaMQDY?si=BBeUKqQtTiuh2zUAWBGing
 tidal: 158554501
