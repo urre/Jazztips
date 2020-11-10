@@ -33,7 +33,7 @@ exclude:
   - bin
   - node_modules
   - index.js
-  - src
+  - tools
 
 # Sass
 sass:

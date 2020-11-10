@@ -37,6 +37,7 @@ exclude:
   - bin
   - node_modules
   - index.js
+  - tools
 
 # Tag page
 tag_page_layout: tag_page

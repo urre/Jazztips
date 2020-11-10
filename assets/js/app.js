@@ -76,7 +76,7 @@ const showResults = (result) => {
 			const searchitem = document.createElement('div')
 
 			searchitem.className = 'block py-4'
-			searchitem.innerHTML = `<a class='' href='${window.store[ref].link}'><img class='object-cover rounded-md border-solid border-opacity-50 border' src='${window.store[ref].image}' src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div><div class='card-header'><h4 class='card-title'>${window.store[ref].artist} - ${window.store[ref].title}</h4><h6 class='card-meta'>${window.store[ref].label}</h6></div></a>`
+			searchitem.innerHTML = `<a class='' href='${window.store[ref].link}'><img class='object-cover rounded-md border-solid border-opacity-50 border' src='${window.store[ref].image}' src='${window.store[ref].image}' alt='${window.store[ref].title}'/></div><div class="py-4"><div class='card-header'><h2 class='text-xl'>${window.store[ref].artist} - ${window.store[ref].title}</h2><h4 class='text-sm uppercase mt-2'>${window.store[ref].label}</h4></div></div></a>`
 
 			resultdiv.appendChild(searchitem)
 		}
