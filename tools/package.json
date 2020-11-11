@@ -1,7 +1,7 @@
 {
-	"name": "tools",
+	"name": "jazztipstools",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A set of tools used for writing posts, creating nice Open Graph images and more.",
 	"main": "index.js",
 	"directories": {
 		"lib": "lib"
@@ -14,9 +14,8 @@
 			"@babel/preset-env"
 		]
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Urban Sanden",
+	"license": "MIT",
 	"dependencies": {
 		"puppeteer": "^5.4.1"
 	},
@@ -30,6 +29,7 @@
 		"front-matter": "^4.0.2",
 		"fs-extra": "^9.0.1",
 		"get-urls": "^10.0.0",
+		"open": "^7.3.0",
 		"readline": "^1.3.0",
 		"readline-sync": "^1.4.10",
 		"slugify": "^1.4.6"
