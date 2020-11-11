@@ -3,3 +3,4 @@ _site
 .asset-cache
 .jekyll-cache
 Gemfile.lock
+tools/temp.jpg
