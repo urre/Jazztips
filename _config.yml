@@ -18,6 +18,8 @@ facebook:
 twitter:
   username: jazztps
 
+future: false
+
 # Pagination
 paginate: 16
 paginate_path: "/:num/"
