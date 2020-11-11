@@ -5,6 +5,7 @@ const glob = require('glob')
 const readline = require('readline-sync')
 const getUrls = require('get-urls')
 const cloudinary = require('cloudinary')
+const open = require('open')
 require('dotenv').config({ path: __dirname + `/../.env` })
 
 // Cloudinary settings, read secrets
@@ -42,22 +43,6 @@ const fileFrontmatter = fs.readFileSync(filename, 'utf8')
 const fileData = fm(fileFrontmatter)
 let artistYPosition = '250'
 
-// Format artist name
-const formatArtist = (artist) => {
-	if (artist.length > 20) {
-		const artistName = artist.split(' ')
-		let artistNameFormatted = ''
-
-		for (let artistPart of artistName) {
-			artistNameFormatted += `${artistPart}\n`
-		}
-
-		artistYPosition = '150'
-
-		return artistNameFormatted
-	}
-}
-
 // Load image into the canvas and add text
 loadImage(fileData.attributes.image).then((image) => {
 	const width = 1200
@@ -79,22 +64,29 @@ loadImage(fileData.attributes.image).then((image) => {
 	context.textAlign = 'left'
 	context.textBaseline = 'top'
 
-	const text = `${fileData.attributes.artist}\n”${fileData.attributes.title}”`
-
 	context.fillRect(500, 0, 700, 630)
 
 	context.fillStyle = '#111'
-	// context.fillText(text, 600, artistYPosition)
 
-	wrapText(context, text, 600, artistYPosition, 400, 1.2)
+	wrapText(
+		context,
+		`${fileData.attributes.artist}\n\n”${fileData.attributes.title}”`,
+		600,
+		200,
+		500,
+		60
+	)
 
 	context.fillStyle = '#68d391'
 	context.beginPath()
-	context.arc(480, 180, 50, 0, 2 * Math.PI)
+	context.arc(1080, 100, 50, 0, 2 * Math.PI)
 	context.fill()
 
 	const buffer = canvas.toBuffer('image/jpeg')
 	fs.writeFileSync('./temp.jpg', buffer)
+
+	open('./temp.jpg', { app: 'Visual Studio Code' })
+	open(filename, { app: 'Visual Studio Code' })
 
 	// Upload file to Cloudinary
 	const newImage = cloudinary.v2.uploader.upload('./temp.jpg', function (
@@ -109,7 +101,7 @@ loadImage(fileData.attributes.image).then((image) => {
 
 			const URLs = getUrls(data)
 			const oldImage = Array.from(URLs)[0]
-			var newfileData = data.replace(oldImage, result.secure_url)
+			var newfileData = data.replace('opengraph', result.secure_url)
 
 			fs.writeFile(filename, newfileData, 'utf8', function (err) {
 				if (err) return console.log(err)
