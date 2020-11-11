@@ -10,6 +10,8 @@ ogimage: https://res.cloudinary.com/urre/image/upload/v1605118478/q4mszrxvoadzcd
 permalink: /here-be-dragons/
 tidal: 130691370
 spotify: https://open.spotify.com/album/5CNcTVrgGUXPTewHvOFzlv?si=fu-jGld0TyKC6Jktnqv2gw
+buy: https://www.ecmrecords.com/shop/1575278265/here-be-dragons-oded-tzur-oded-tzur
+buyat: ECM
 credits:
 - { name: "Oded Tzur", instrument: "Tenorsaxofon"}
 - { name: "Nitai Hershkovits", instrument: "Piano"}
