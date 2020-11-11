@@ -6,7 +6,7 @@ label: Prestige
 year: 1957
 tags: [gil, evans, storband, prestige, konitz, chambers, jones]
 image: https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1605116200/screenshots/knhknuhuuwyhc3yo7zip.jpg
-ogimage: https://res.cloudinary.com/urre/image/upload/v1605116738/jukfb859p3kl2ydypvev.jpg
+ogimage: https://res.cloudinary.com/urre/image/upload/v1605117370/eocvnudcoqqrfz6tumrp.jpg
 permalink: /gil-evans-and-ten/
 spotify: https://open.spotify.com/album/5lRD22VpY5wk2HFCubwdXk?si=rY_Zign2RkyXpU2mzAu-Hg
 tidal: 1281674

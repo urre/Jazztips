@@ -77,10 +77,10 @@ loadImage(fileData.attributes.image).then((image) => {
 		60
 	)
 
-	context.fillStyle = '#68d391'
-	context.beginPath()
-	context.arc(1080, 100, 50, 0, 2 * Math.PI)
-	context.fill()
+	// context.fillStyle = '#68d391'
+	// context.beginPath()
+	// context.arc(1080, 100, 50, 0, 2 * Math.PI)
+	// context.fill()
 
 	const buffer = canvas.toBuffer('image/jpeg')
 	fs.writeFileSync('./temp.jpg', buffer)

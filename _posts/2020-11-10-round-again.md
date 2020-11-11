@@ -5,7 +5,7 @@ artist: Joshua Redman
 label: Nonesuch
 year: 2020
 tags: [mcbride, redman, blade, mehldau, kvartett]
-image: https://res.cloudinary.com/urre/image/upload/v1605008240/screenshots/v5azw7iliy3aqb31o9pw.jpg
+image: https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1605008240/screenshots/v5azw7iliy3aqb31o9pw.jpg
 permalink: /roundagain/
 spotify: https://open.spotify.com/album/6glNa1tv5xDIevYwSvxNkm?si=l49hi1yNRPextRxmxNK9MQ
 tidal: 145656200
