@@ -8,9 +8,7 @@ url: "https://jazztips.se"
 logo: /images/og.png
 timezone: Europe/Stockholm
 locale: sv_SE
-author:
-  facebook: urbansanden
-  twitter: urre
+author: "Urban Sandén"
 facebook:
   app_id: 184004771618651
   publisher: 191053684242292
