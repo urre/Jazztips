@@ -7,7 +7,8 @@
 		"lib": "lib"
 	},
 	"scripts": {
-		"start": "npx babel-node index.js"
+		"start": "npx babel-node index.js",
+		"og": "npx babel-node ogimage.js"
 	},
 	"babel": {
 		"presets": [

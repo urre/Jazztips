@@ -50,62 +50,59 @@ loadImage(fileData.attributes.image).then((image) => {
 
 	const canvas = createCanvas(width, height)
 	const context = canvas.getContext('2d')
-	context.fillStyle = '#fff'
+	// context.fillStyle = '#fff'
+	context.fillStyle = '#bdfbd5'
 
 	context.fillRect(0, 0, canvas.width, canvas.height)
 
-	context.drawImage(image, 100, 115, 400, 400)
+	context.drawImage(image, 0, 0, 630, 630)
 
 	registerFont('./spectral/Spectral-Light.ttf', {
 		family: 'Spectral',
 	})
 
-	context.font = 'normal 44pt Spectral'
+	context.font = 'normal 64pt Spectral'
 	context.textAlign = 'left'
 	context.textBaseline = 'top'
 
-	context.fillRect(500, 0, 700, 630)
+	// ctx.fillText('Hello World!', 650, 50)
 
 	context.fillStyle = '#111'
+	// context.fillRect(5, 0, 650, 630)
 
-	wrapText(
-		context,
-		`${fileData.attributes.artist}\n\n”${fileData.attributes.title}”`,
-		600,
-		200,
-		500,
-		60
-	)
+	wrapText(context, `${fileData.attributes.artist}`, 700, 120, 510, 90)
 
-	// context.fillStyle = '#68d391'
-	// context.beginPath()
-	// context.arc(1080, 100, 50, 0, 2 * Math.PI)
-	// context.fill()
+	wrapText(context, `”${fileData.attributes.title}”`, 700, 340, 510, 90)
+
+	context.fillStyle = '#68d391'
+	context.beginPath()
+	context.arc(1080, 100, 50, 0, 2 * Math.PI)
+	context.fill()
 
 	const buffer = canvas.toBuffer('image/jpeg')
 	fs.writeFileSync('./temp.jpg', buffer)
 
 	open('./temp.jpg', { app: 'Visual Studio Code' })
-	open(filename, { app: 'Visual Studio Code' })
+	// open(filename, { app: 'Visual Studio Code' })
 
 	// Upload file to Cloudinary
-	const newImage = cloudinary.v2.uploader.upload('./temp.jpg', function (
-		error,
-		result
-	) {
-		// Replace image in file
-		fs.readFile(filename, 'utf8', function (err, data) {
-			if (err) {
-				return console.log(err)
-			}
+	const newImage = cloudinary.v2.uploader.upload(
+		'./temp.jpg',
+		function (error, result) {
+			// Replace image in file
+			fs.readFile(filename, 'utf8', function (err, data) {
+				if (err) {
+					return console.log(err)
+				}
 
-			const URLs = getUrls(data)
-			const oldImage = Array.from(URLs)[0]
-			var newfileData = data.replace('opengraph', result.secure_url)
+				const URLs = getUrls(data)
+				const oldImage = Array.from(URLs)[0]
+				var newfileData = data.replace('opengraph', result.secure_url)
 
-			fs.writeFile(filename, newfileData, 'utf8', function (err) {
-				if (err) return console.log(err)
+				fs.writeFile(filename, newfileData, 'utf8', function (err) {
+					if (err) return console.log(err)
+				})
 			})
-		})
-	})
+		}
+	)
 })

@@ -6,6 +6,7 @@ label: Jazzland Recordings
 year: 2020
 tags: [bugge, wesseltoft, berglund, trio, piano]
 image: https://res.cloudinary.com/urre/image/upload/v1603991543/screenshots/nysd3ghdwogmg1k6nbzw.jpg
+ogimage: https://res.cloudinary.com/urre/image/upload/v1606578858/hnuajllfmtle7tzem32b.jpg
 permalink: /space-sailors/
 spotify: https://open.spotify.com/album/2ogpiZdnA3GtoBhAq8bYyw?si=cNRXaIYETi-Qxad14SkIgA
 tidal: 140640890
