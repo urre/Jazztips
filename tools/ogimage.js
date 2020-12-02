@@ -2,9 +2,11 @@ const fs = require('fs')
 const { createCanvas, registerFont, loadImage } = require('canvas')
 const fm = require('front-matter')
 const glob = require('glob')
+const path = require('path')
 const readline = require('readline-sync')
 const getUrls = require('get-urls')
 const cloudinary = require('cloudinary')
+const insertLine = require('insert-line')
 const open = require('open')
 require('dotenv').config({ path: __dirname + `/../.env` })
 
@@ -14,6 +16,21 @@ cloudinary.config({
 	api_key: process.env.APIKEY,
 	api_secret: process.env.APISECRET,
 })
+
+// Get most recent file
+const getMostRecentFile = (dir) => {
+	const files = orderReccentFiles(dir)
+	return files.length ? files[0] : undefined
+}
+
+// Order files
+const orderReccentFiles = (dir) => {
+	return fs
+		.readdirSync(dir)
+		.filter((file) => fs.lstatSync(path.join(dir, file)).isFile())
+		.map((file) => ({ file, mtime: fs.lstatSync(path.join(dir, file)).mtime }))
+		.sort((a, b) => b.mtime.getTime() - a.mtime.getTime())
+}
 
 // Wrap text in canvas
 const wrapText = (context, text, x, y, maxWidth, lineHeight) => {
@@ -36,73 +53,100 @@ const wrapText = (context, text, x, y, maxWidth, lineHeight) => {
 }
 
 // Select file
-let name = readline.question('Filename of post to create an OG image for: ')
-const filename = `../_posts/${name}`
-
-const fileFrontmatter = fs.readFileSync(filename, 'utf8')
+const filename = getMostRecentFile('../_posts/')
+const fileFrontmatter = fs.readFileSync(`../_posts/${filename.file}`, 'utf8')
 const fileData = fm(fileFrontmatter)
-let artistYPosition = '250'
 
-// Load image into the canvas and add text
-loadImage(fileData.attributes.image).then((image) => {
-	const width = 1200
-	const height = 630
+if (!fileData.attributes.ogimage) {
+	// Load image into the canvas and add text
+	loadImage(fileData.attributes.image).then((image) => {
+		const width = 1200
+		const height = 630
 
-	const canvas = createCanvas(width, height)
-	const context = canvas.getContext('2d')
-	// context.fillStyle = '#fff'
-	context.fillStyle = '#bdfbd5'
+		const canvas = createCanvas(width, height)
+		const context = canvas.getContext('2d')
 
-	context.fillRect(0, 0, canvas.width, canvas.height)
+		// Fill with white background color
+		context.fillStyle = '#bdfbd5'
+		context.fillRect(0, 0, canvas.width, canvas.height)
 
-	context.drawImage(image, 0, 0, 630, 630)
+		// Add image to canvas
+		context.drawImage(image, 0, 0, 630, 630)
 
-	registerFont('./spectral/Spectral-Light.ttf', {
-		family: 'Spectral',
-	})
+		// Use custom font     c
+		registerFont('./spectral/Spectral-Light.ttf', {
+			family: 'Spectral',
+		})
 
-	context.font = 'normal 64pt Spectral'
-	context.textAlign = 'left'
-	context.textBaseline = 'top'
+		// Set font style and placement
+		let fontSize = 64
+		let lineHeight = fontSize * 1.3975
+		let textArtistY = 120
+		let textTitleY = textArtistY + 220
 
-	// ctx.fillText('Hello World!', 650, 50)
-
-	context.fillStyle = '#111'
-	// context.fillRect(5, 0, 650, 630)
-
-	wrapText(context, `${fileData.attributes.artist}`, 700, 120, 510, 90)
-
-	wrapText(context, `”${fileData.attributes.title}”`, 700, 340, 510, 90)
-
-	context.fillStyle = '#68d391'
-	context.beginPath()
-	context.arc(1080, 100, 50, 0, 2 * Math.PI)
-	context.fill()
-
-	const buffer = canvas.toBuffer('image/jpeg')
-	fs.writeFileSync('./temp.jpg', buffer)
-
-	open('./temp.jpg', { app: 'Visual Studio Code' })
-	// open(filename, { app: 'Visual Studio Code' })
-
-	// Upload file to Cloudinary
-	const newImage = cloudinary.v2.uploader.upload(
-		'./temp.jpg',
-		function (error, result) {
-			// Replace image in file
-			fs.readFile(filename, 'utf8', function (err, data) {
-				if (err) {
-					return console.log(err)
-				}
-
-				const URLs = getUrls(data)
-				const oldImage = Array.from(URLs)[0]
-				var newfileData = data.replace('opengraph', result.secure_url)
-
-				fs.writeFile(filename, newfileData, 'utf8', function (err) {
-					if (err) return console.log(err)
-				})
-			})
+		if (fileData.attributes.artist.length > 20) {
+			fontSize = 50
+			lineHeight = fontSize * 1.275
+			textArtistY = 160
+			textTitleY = textArtistY + 240
+		} else {
+			fontSize = 64
 		}
-	)
-})
+
+		context.font = `normal ${fontSize}pt Spectral`
+		context.textAlign = 'left'
+		context.textBaseline = 'top'
+
+		context.fillStyle = '#fff'
+		context.fillRect(550, 90, 700, 500)
+
+		// Add text
+		context.fillStyle = '#000'
+		wrapText(
+			context,
+			`${fileData.attributes.artist}`,
+			640,
+			textArtistY,
+			510,
+			lineHeight
+		)
+		wrapText(
+			context,
+			`”${fileData.attributes.title}”`,
+			640,
+			textTitleY,
+			510,
+			lineHeight
+		)
+
+		// Add Jazztips green circle
+		context.fillStyle = '#68d391'
+		context.beginPath()
+		context.arc(1080, 100, 50, 0, 2 * Math.PI)
+		context.fill()
+
+		const buffer = canvas.toBuffer('image/jpeg')
+		fs.writeFileSync('./temp.jpg', buffer)
+
+		/* Open in VS Code just to preview while testing */
+		open('./temp.jpg', { app: 'Visual Studio Code' })
+
+		// Upload file to Cloudinary
+		const newImage = cloudinary.v2.uploader.upload(
+			'./temp.jpg',
+			function (error, result) {
+				// Write Cloudinary image back to markdown file
+				insertLine(`../_posts/${filename.file}`)
+					.content(`ogimage: ${result.secure_url}`)
+					.at(9)
+					.then(function (err) {
+						// var content = fs.readFileSync(destListPath, 'utf8')
+						// console.log(content)
+					})
+			}
+		)
+	})
+} else {
+	console.log('Post already has ogimage frontmatter')
+	process.exit(1)
+}

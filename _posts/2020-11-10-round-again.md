@@ -17,4 +17,4 @@ credits:
 
 ---
 
-Uppföljaren till [Moodswing](https://www.discogs.com/Joshua-Redman-Quartet-MoodSwing/release/2134690)
+Uppföljaren till [Moodswing](https://www.discogs.com/Joshua-Redman-Quartet-MoodSwing/release/2134690).

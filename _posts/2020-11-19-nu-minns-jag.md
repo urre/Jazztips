@@ -13,7 +13,7 @@ spotify: https://open.spotify.com/album/01WJnGIRhIBEGUDzq2DnjI?si=cj9hzRpBR-yYOZ
 buy: https://www.roughtrade.com/gb/ivan-blomqvist/nu-minns-jag
 buyat: Roughtrade
 credits:
-- { name: "Ivan Blomqvist", instrument: "Piano, Analog synthar"}
+- { name: "Ivan Blomqvist", instrument: "Piano, Analoga synthar"}
 
 ---
 
