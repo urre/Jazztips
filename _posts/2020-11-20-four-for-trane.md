@@ -5,7 +5,7 @@ artist: Archie Shepp
 label: Impulse!
 year: 1964
 tags: [trane, shepp, workman]
-image: https://res.cloudinary.com/urre/image/upload/v1605707638/screenshots/lv9grinv835lzb4yvtzn.jpg
+image: https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1605707638/screenshots/lv9grinv835lzb4yvtzn.jpg
 ogimage: https://res.cloudinary.com/urre/image/upload/v1605707686/u66mj7dfvpfe1kifgjli.jpg
 permalink: /four-for-trane/
 tidal: 4016126

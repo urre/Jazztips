@@ -5,7 +5,7 @@ artist: Christian McBride Big Band
 label: Mack Avenue Music Group
 year: 2020
 tags: [mcbride, big band, defrancesco, orgel, ]
-image:  https://res.cloudinary.com/urre/image/upload/v1606915632/screenshots/fghrcq1z1j4pk3sgyp2l.png
+image:  https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1606915632/screenshots/fghrcq1z1j4pk3sgyp2l.png
 ogimage: https://res.cloudinary.com/urre/image/upload/v1606917873/hiwktl6aogk2uvg8x9vz.jpg
 permalink: /for-jimmy-wes-and-oliver/
 tidal: 135201260
