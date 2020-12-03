@@ -6,6 +6,7 @@ label: Young Turks
 year: 2018
 tags: kamasi washington saxophone
 image: https://res.cloudinary.com/urre/image/upload/v1532678157/oe56vu746gyciq7cvsps.jpg
+ogimage: https://res.cloudinary.com/urre/image/upload/v1606987103/uckyqrtfpchoqkgv0ecx.jpg
 permalink: /heaven-and-earth/
 spotify: https://open.spotify.com/track/5Nora499oDSATImRP0lcKh?si=sjCJq-s-S66KIBppW5vlxg
 tidal: 90089038
@@ -41,7 +42,7 @@ credits:
 
 ---
 
-Kamasi har blivit hiphopgenerationens största jazz-stjärna tack vare samarbeten med Kendrick Lamar på exempelvis "To Pimp a Butterfly".
+Kamasi har blivit hiphop-generationens största jazz-stjärna tack vare samarbeten med Kendrick Lamar på exempelvis "To Pimp a Butterfly".
 Fantastiska mastodontalbumet "Heaven And Earth" är en produkt av sin tid och en del av den nya medborgarrättsrörelsen i USA som växer sig allt starkare. 144 minuter värdig uppföljare till "The Epic" 2016.
 
 [På Way Out West 11 augusti](https://www.wayoutwest.se/line-up/kamasi-washington-2/)

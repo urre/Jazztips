@@ -6,12 +6,11 @@ label: Mack Avenue Music Group
 year: 2020
 tags: [mcbride, big band, defrancesco, orgel, ]
 image:  https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1606915632/screenshots/fghrcq1z1j4pk3sgyp2l.png
-ogimage: https://res.cloudinary.com/urre/image/upload/v1606917873/hiwktl6aogk2uvg8x9vz.jpg
 permalink: /for-jimmy-wes-and-oliver/
 tidal: 135201260
 spotify: https://open.spotify.com/album/0xvxqhTOZYznKFhGBLiTuy?si=hIDecnrDSMiovlJzVhEMow
 buy: https://www.mackavenue.com/store/mac1152
-buyat: Mack Avenue
+buyat: Mack Avenue Music
 credits:
 - { name: "Todd Bashore", instrument: "Altsaxofon" }
 - { name: "Steve Wilson", instrument: "Altsaxofon" }

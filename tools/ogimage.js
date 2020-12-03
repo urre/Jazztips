@@ -6,6 +6,8 @@ const path = require('path')
 const readline = require('readline-sync')
 const getUrls = require('get-urls')
 const cloudinary = require('cloudinary')
+const chalk = require('chalk')
+const log = console.log
 const insertLine = require('insert-line')
 const open = require('open')
 require('dotenv').config({ path: __dirname + `/../.env` })
@@ -60,8 +62,15 @@ const fileData = fm(fileFrontmatter)
 if (!fileData.attributes.ogimage) {
 	// Load image into the canvas and add text
 	loadImage(fileData.attributes.image).then((image) => {
+		// Settings
 		const width = 1200
 		const height = 630
+
+		// Set font style and placement
+		let fontSize = 64
+		let lineHeight = fontSize * 1.3975
+		let textArtistY = 120
+		let textTitleY = textArtistY + 220
 
 		const canvas = createCanvas(width, height)
 		const context = canvas.getContext('2d')
@@ -71,23 +80,17 @@ if (!fileData.attributes.ogimage) {
 		context.fillRect(0, 0, canvas.width, canvas.height)
 
 		// Add image to canvas
-		context.drawImage(image, 0, 0, 630, 630)
+		context.drawImage(image, 40, 50, 600, 600)
 
 		// Use custom font     c
 		registerFont('./spectral/Spectral-Light.ttf', {
 			family: 'Spectral',
 		})
 
-		// Set font style and placement
-		let fontSize = 64
-		let lineHeight = fontSize * 1.3975
-		let textArtistY = 120
-		let textTitleY = textArtistY + 220
-
 		if (fileData.attributes.artist.length > 20) {
 			fontSize = 50
 			lineHeight = fontSize * 1.275
-			textArtistY = 160
+			textArtistY = 140
 			textTitleY = textArtistY + 240
 		} else {
 			fontSize = 64
@@ -131,22 +134,21 @@ if (!fileData.attributes.ogimage) {
 		/* Open in VS Code just to preview while testing */
 		open('./temp.jpg', { app: 'Visual Studio Code' })
 
-		// Upload file to Cloudinary
+		// Upload image to Cloudinary, and add as front matter in markdown file
 		const newImage = cloudinary.v2.uploader.upload(
 			'./temp.jpg',
 			function (error, result) {
-				// Write Cloudinary image back to markdown file
 				insertLine(`../_posts/${filename.file}`)
 					.content(`ogimage: ${result.secure_url}`)
 					.at(9)
 					.then(function (err) {
-						// var content = fs.readFileSync(destListPath, 'utf8')
-						// console.log(content)
+						log(`${chalk.green(`✔️ Inserted ogimage front matter`)}`)
 					})
 			}
 		)
 	})
 } else {
-	console.log('Post already has ogimage frontmatter')
-	process.exit(1)
+	log(`
+	${chalk.yellow(`⚠️ ../_posts/${filename.file} already has ogimage frontmatter`)}
+	`)
 }
