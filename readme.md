@@ -32,3 +32,9 @@
 ## Deploy
 
 Netlify will automatically deploy from the master branch 😎
+
+## Trouble?
+
+```
+bundle exec jekyll clean
+```

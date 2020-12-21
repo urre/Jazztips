@@ -82,7 +82,7 @@ if (!fileData.attributes.ogimage) {
 		// Add image to canvas
 		context.drawImage(image, 40, 50, 600, 600)
 
-		// Use custom font     c
+		// Use custom font
 		registerFont('./spectral/Spectral-Light.ttf', {
 			family: 'Spectral',
 		})

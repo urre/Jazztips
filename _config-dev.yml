@@ -37,7 +37,10 @@ exclude:
   - bin
   - node_modules
   - index.js
+  - "*.config.js"
+  - "package*.json"
   - tools
+  - tools/node_modules
 
 # Tag page
 tag_page_layout: tag_page

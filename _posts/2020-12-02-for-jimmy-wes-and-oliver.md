@@ -4,8 +4,9 @@ title: For Jimmy, Wes and Oliver
 artist: Christian McBride Big Band
 label: Mack Avenue Music Group
 year: 2020
-tags: [mcbride, big band, defrancesco, orgel, ]
+tags: [mcbride, big band, defrancesco, orgel]
 image:  https://res.cloudinary.com/urre/image/upload/w_600,h_600/v1606915632/screenshots/fghrcq1z1j4pk3sgyp2l.png
+ogimage: https://res.cloudinary.com/urre/image/upload/v1608555117/uu72pvca68uuto85zbsg.jpg
 permalink: /for-jimmy-wes-and-oliver/
 tidal: 135201260
 spotify: https://open.spotify.com/album/0xvxqhTOZYznKFhGBLiTuy?si=hIDecnrDSMiovlJzVhEMow

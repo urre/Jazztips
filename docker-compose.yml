@@ -11,4 +11,5 @@ services:
           - 4000:4000
       volumes:
           - .:/srv/jekyll
+          - ./tools/node_modules
           - ./vendor/bundle:/usr/local/bundle
