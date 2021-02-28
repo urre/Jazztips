@@ -1,8 +1,11 @@
 name: Netlify Deploy
 
 on:
-  schedule:
-  - cron: "51 15 * * *"
+ push:
+    branches:
+      - dev
+  # schedule:
+  # - cron: "51 15 * * *"
 
 jobs:
   build:
@@ -12,6 +15,7 @@ jobs:
       uses: tj-actions/verify-changed-files@v5.5
       id: changed_files
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         files:
           .(md)$
     - name: Display changed files
