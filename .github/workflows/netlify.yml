@@ -14,10 +14,10 @@ jobs:
     - id: files
       uses: jitterbit/get-changed-files@v1
       with:
-        format: 'json'
+        format: 'csv'
     - run: |
-        readarray -t removed_files <<<"$(jq -r '.[]' <<<'${{ steps.files.outputs.removed }}')"
-        for removed_file in ${removed_files[@]}; do
-          echo "Do something with this ${removed_file}."
+        mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
+        for added_modified_file in "${added_modified_files[@]}"; do
+          echo "Do something with this ${added_modified_file}."
         done
       # run: curl -X POST ${{ secrets.NETLIFY_BUILD_URL }}
