@@ -8,5 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Trigger Netlify Hook
+    - name: Verify Changed files
+      uses: tj-actions/verify-changed-files@v5.5
+        id: changed_files
+        with:
+          files:
+              .(md)$
+    - name: Display changed files
+      if: steps.changed_files.outputs.files_changed == 'true'
+      run: |
+        echo "Changed files: ${{ steps.changed_files.outputs.changed_files }}"
+    - name: Trigger Netlify Hook when files change.
+      if: steps.changed_files.outputs.files_changed == 'true'
       run: curl -X POST ${{ secrets.NETLIFY_BUILD_URL }}
