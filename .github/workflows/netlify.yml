@@ -18,6 +18,6 @@ jobs:
       if: steps.changed_files.outputs.files_changed == 'true'
       run: |
         echo "Changed files: ${{ steps.changed_files.outputs.changed_files }}"
-    - name: Trigger Netlify Hook when files change.
+    - name: Trigger Netlify Hook when _posts folder change
       if: steps.changed_files.outputs.files_changed == 'true'
       run: curl -X POST ${{ secrets.NETLIFY_BUILD_URL }}
