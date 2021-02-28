@@ -3,7 +3,7 @@ name: Netlify Deploy
 on:
   push:
       branches:
-        - dev
+        - master
   # schedule:
   # - cron: "51 15 * * *"
 
