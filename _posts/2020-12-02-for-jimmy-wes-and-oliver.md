@@ -11,7 +11,7 @@ permalink: /for-jimmy-wes-and-oliver/
 tidal: 135201260
 spotify: https://open.spotify.com/album/0xvxqhTOZYznKFhGBLiTuy?si=hIDecnrDSMiovlJzVhEMow
 buy: https://www.mackavenue.com/store/mac1152
-buyat: Mack Avenue Music
+buyat: Mack Avenue
 credits:
 - { name: "Todd Bashore", instrument: "Altsaxofon" }
 - { name: "Steve Wilson", instrument: "Altsaxofon" }
