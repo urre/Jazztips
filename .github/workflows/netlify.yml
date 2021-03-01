@@ -1,23 +1,12 @@
 name: Netlify Deploy
 
 on:
-  push:
-      branches:
-        - master
-  # schedule:
-  # - cron: "51 15 * * *"
+  schedule:
+  - cron: "0 13 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - id: files
-      uses: jitterbit/get-changed-files@v1
-      with:
-        format: 'csv'
-    - run: |
-        mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-        for added_modified_file in "${added_modified_files[@]}"; do
-          echo "Do something with this ${added_modified_file}."
-        done
-      # run: curl -X POST ${{ secrets.NETLIFY_BUILD_URL }}
+    - name: Trigger Netlify Hook
+      run: curl -X POST ${{ secrets.NETLIFY_BUILD_URL }}
